@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+
+# Word lock files / temp
+~$*.docx
+*.tmp
+
+# Old draft PDFs / Word exports (the live version is index.html on Pages)
+*.pdf
+CapCut-Video-Editing-Guide.docx
+Video-Editing-Master-Guide.docx
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# IDE
+.vscode/
+.idea/
