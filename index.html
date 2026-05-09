@@ -54,18 +54,20 @@ a { color: inherit; text-decoration: none; }
   max-width: 680px; width: 100%;
   display: flex; flex-direction: column; align-items: center; text-align: center;
 }
-.apj-brand { display: flex; align-items: center; gap: 12px; margin-bottom: 20px; }
+.apj-brand { display: flex; align-items: center; gap: 16px; margin-bottom: 22px; }
 .apj-logo {
-  width: 48px; height: 48px; border-radius: 50%;
-  border: 2px solid rgba(255,170,58,0.4); padding: 2px; background: #fff;
+  width: 84px; height: 84px; border-radius: 50%;
+  border: 3px solid rgba(255,170,58,0.45); padding: 3px; background: #fff;
+  box-shadow: 0 6px 20px rgba(255,93,58,0.18);
 }
-.apj-text { line-height: 1.2; text-align: left; }
+.apj-text { line-height: 1.25; text-align: left; }
 .apj-name {
-  font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 16px;
+  font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 22px;
   background: linear-gradient(135deg, #ff5d3a 0%, #ffaa3a 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+  letter-spacing: -0.01em;
 }
-.apj-tag { font-size: 10px; color: var(--text-muted); letter-spacing: 0.06em; font-style: italic; }
+.apj-tag { font-size: 12px; color: var(--text-muted); letter-spacing: 0.06em; font-style: italic; }
 
 .hero-tag {
   display: inline-block; padding: 5px 12px; font-size: 10px; font-weight: 600;
@@ -174,7 +176,10 @@ h1 .gradient {
 
 @media (max-width: 600px) {
   .hero { padding: 20px 18px; }
-  .apj-brand { margin-bottom: 14px; }
+  .apj-brand { margin-bottom: 16px; gap: 12px; }
+  .apj-logo { width: 64px; height: 64px; }
+  .apj-name { font-size: 18px; }
+  .apj-tag { font-size: 11px; }
   .lead { font-size: 14px; margin-bottom: 18px; }
   .cta-btn { padding: 12px 22px; font-size: 14px; }
   .cta-meta { margin-bottom: 18px; }
@@ -198,7 +203,7 @@ h1 .gradient {
 
     <h1>Notes from the<br><span class="gradient">Video Editing Class</span></h1>
 
-    <p class="lead">Step-by-step companion guide with screenshots — everything we covered in class on Proton VPN, CapCut, Wondershare, transitions, and exporting. Quick check-in below to access.</p>
+    <p class="lead">Step-by-step companion guide with screenshots.</p>
 
     <a id="get-access" href="https://tally.so/r/ODdzQk?Class=Video%20Editing" class="cta-btn">
       Get Access
