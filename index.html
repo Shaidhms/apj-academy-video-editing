@@ -1,376 +1,129 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>APJ NextGen AI Video Editing Class</title>
-<link rel="icon" type="image/png" href="images/apj-logo.png">
-<link rel="apple-touch-icon" href="images/apj-logo.png">
-<meta name="description" content="APJ Academy Video Editing Guide — interactive, step-by-step VPN, CapCut, and Clipchamp class companion for APJ NextGen AI students.">
-<meta property="og:title" content="APJ Academy Video Editing Guide">
-<meta property="og:description" content="Interactive class guide — VPN setup, CapCut, Clipchamp, beat-sync editing, the Pro export trick. By Muhibbuddin Shaid Hakkeem.">
-<meta property="og:image" content="images/apj-logo.png">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>APJ Academy · Video Editing Class — Get the Notes</title>
+<meta name="description" content="Quick check-in to access the APJ Academy Video Editing Class notes — step-by-step guide curated by Muhibbuddin Shaid Hakkeem.">
+<meta property="og:title" content="APJ Academy · Video Editing Class">
+<meta property="og:description" content="Step-by-step notes from the APJ Academy Video Editing Class.">
 <meta property="og:type" content="website">
+<meta property="og:image" content="images/shaid-photo.jpeg">
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="images/apj-logo.png">
+
 <style>
 :root {
-  --bg: #0b0d12;
-  --bg-soft: #11141b;
-  --bg-card: #161a23;
-  --bg-elev: #1c212c;
-  --line: #232936;
-  --text: #e7ecf2;
-  --text-muted: #9aa3b2;
-  --text-dim: #6b7383;
+  --bg: #0e0d0c;
+  --bg-soft: #15130f;
+  --bg-card: #1a1714;
+  --bg-elev: #211d18;
+  --text: #f5f1ea;
+  --text-muted: #b8aea0;
+  --text-dim: #8a8175;
+  --line: rgba(245,241,234,0.08);
   --accent: #ff5d3a;
   --accent-2: #ffaa3a;
-  --teal: #3ccfd0;
-  --green: #38d39f;
-  --red: #ff5b6e;
-  --purple: #b07cff;
-  --blue: #4d8cff;
 }
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* { margin: 0; padding: 0; box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body {
-  font-family: 'Inter', -apple-system, sans-serif;
+  font-family: 'Inter', system-ui, sans-serif;
   background: var(--bg);
   color: var(--text);
-  line-height: 1.65;
-  font-size: 16px;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex; flex-direction: column;
   -webkit-font-smoothing: antialiased;
 }
 a { color: inherit; text-decoration: none; }
 
-/* ===== LAYOUT ===== */
-.wrap { display: grid; grid-template-columns: 280px 1fr; max-width: 1500px; margin: 0 auto; }
-@media (max-width: 920px) { .wrap { grid-template-columns: 1fr; } }
-
-/* ===== SIDEBAR ===== */
-.sidebar {
-  position: sticky; top: 0; height: 100vh; overflow-y: auto;
-  padding: 32px 24px;
-  border-right: 1px solid var(--line);
-  background: var(--bg-soft);
+.hero {
+  flex: 1;
+  display: flex; align-items: center; justify-content: center;
+  padding: 64px 24px;
+  background:
+    radial-gradient(ellipse 800px 600px at top right, rgba(255,93,58,0.18) 0%, transparent 50%),
+    radial-gradient(ellipse 600px 500px at bottom left, rgba(76,140,255,0.10) 0%, transparent 50%),
+    linear-gradient(180deg, var(--bg-soft) 0%, var(--bg) 100%);
 }
-.sidebar h2 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 18px; font-weight: 800; letter-spacing: -0.02em;
-  margin-bottom: 4px;
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+.hero-inner {
+  max-width: 720px; width: 100%;
+  display: flex; flex-direction: column; align-items: center; text-align: center;
+}
+.apj-brand { display: flex; align-items: center; gap: 14px; margin-bottom: 36px; }
+.apj-logo {
+  width: 56px; height: 56px; border-radius: 50%;
+  border: 2px solid rgba(255,170,58,0.4); padding: 2px; background: #fff;
+}
+.apj-text { line-height: 1.2; text-align: left; }
+.apj-name {
+  font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 18px;
+  background: linear-gradient(135deg, #ff5d3a 0%, #ffaa3a 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
-.sidebar .sub { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; margin-bottom: 28px; }
-.sidebar nav a {
-  display: block; padding: 7px 10px; margin: 1px 0;
-  font-size: 13px; color: var(--text-muted);
-  border-radius: 6px; transition: all 0.15s;
-  border-left: 2px solid transparent;
-}
-.sidebar nav a:hover { color: var(--text); background: var(--bg-card); }
-.sidebar nav a.active { color: var(--accent); border-left-color: var(--accent); background: var(--bg-card); }
-.sidebar nav .group-label {
-  font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em;
-  color: var(--text-dim); padding: 14px 10px 6px;
-}
-
-/* ===== MAIN ===== */
-main { padding: 0; max-width: 980px; }
-@media (max-width: 920px) { main { padding: 0 16px; } }
-
-/* ===== HERO ===== */
-.hero {
-  padding: 80px 64px 60px;
-  background:
-    radial-gradient(ellipse at top right, rgba(255,93,58,0.15) 0%, transparent 50%),
-    radial-gradient(ellipse at bottom left, rgba(76,140,255,0.10) 0%, transparent 50%),
-    linear-gradient(180deg, var(--bg-soft) 0%, var(--bg) 100%);
-  border-bottom: 1px solid var(--line);
-}
-@media (max-width: 920px) { .hero { padding: 48px 20px; } }
-.apj-brand { display: flex; align-items: center; gap: 14px; margin-bottom: 28px; }
-.apj-logo { width: 64px; height: 64px; border-radius: 50%; border: 2px solid rgba(255,170,58,0.4); padding: 2px; background: #fff; }
-.apj-text { line-height: 1.2; }
-.apj-name { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 18px; background: linear-gradient(135deg, #ff5d3a 0%, #ffaa3a 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
 .apj-tag { font-size: 11px; color: var(--text-muted); letter-spacing: 0.06em; font-style: italic; }
 
 .hero-tag {
-  display: inline-block; padding: 6px 12px; font-size: 11px; font-weight: 600;
+  display: inline-block; padding: 6px 14px; font-size: 11px; font-weight: 600;
   letter-spacing: 0.1em; text-transform: uppercase;
   background: rgba(255,93,58,0.12); color: var(--accent);
   border: 1px solid rgba(255,93,58,0.25); border-radius: 100px;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
 }
-.hero h1 {
+h1 {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(42px, 6vw, 72px); font-weight: 800; line-height: 1.05;
-  letter-spacing: -0.03em; margin-bottom: 20px;
+  font-size: clamp(34px, 5.5vw, 56px); font-weight: 800; line-height: 1.08;
+  letter-spacing: -0.03em; margin-bottom: 18px;
 }
-.hero h1 .gradient {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 50%, var(--purple) 100%);
+h1 .gradient {
+  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
   -webkit-background-clip: text; -webkit-text-fill-color: transparent;
 }
-.hero p.lead {
-  font-size: 19px; color: var(--text-muted); max-width: 720px; line-height: 1.55;
-  margin-bottom: 36px;
+.lead {
+  font-size: 18px; color: var(--text-muted); max-width: 560px; line-height: 1.55;
+  margin-bottom: 32px;
 }
-.hero-grid {
-  display: grid; grid-template-columns: 1fr auto; gap: 48px; align-items: center;
-}
-@media (max-width: 920px) { .hero-grid { grid-template-columns: 1fr; gap: 32px; } }
 
-.hero-mentor { display: flex; justify-content: flex-end; }
-.hero-mentor-card {
-  position: relative;
-  text-align: center;
-  padding: 28px 28px 24px;
-  background: linear-gradient(180deg, rgba(22,26,35,0.85) 0%, rgba(22,26,35,0.7) 100%);
-  border: 1px solid rgba(255,170,58,0.18);
-  border-radius: 22px;
-  box-shadow: 0 20px 50px rgba(0,0,0,0.4);
-  backdrop-filter: blur(10px);
-  min-width: 240px;
-}
-.hero-mentor-card::before {
-  content: ""; position: absolute; inset: 0;
-  background: radial-gradient(ellipse at top, rgba(255,93,58,0.12), transparent 60%);
-  pointer-events: none; border-radius: inherit;
-}
-.hero-mentor-photo-wrap {
-  position: relative; z-index: 1; width: 140px; height: 140px;
-  margin: 0 auto 22px;
-  border-radius: 50%;
-  padding: 3px;
+.cta-btn {
+  display: inline-flex; align-items: center; gap: 10px;
+  padding: 16px 32px; font-size: 16px; font-weight: 700;
+  font-family: 'Plus Jakarta Sans', sans-serif; letter-spacing: 0.01em;
   background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
+  color: #fff; border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(255,93,58,0.35);
+  transition: transform 0.15s, box-shadow 0.15s;
+  margin-bottom: 14px;
 }
-.hero-mentor-photo {
-  width: 100%; height: 100%; border-radius: 50%; object-fit: cover;
-  display: block; border: 3px solid var(--bg-card);
-}
-.hero-mentor-label {
-  position: absolute;
-  bottom: -10px; left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  font-size: 10px; font-weight: 800; letter-spacing: 0.22em; text-transform: uppercase;
-  color: #1a1207;
-  padding: 5px 16px;
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
-  border-radius: 100px;
-  box-shadow: 0 4px 14px rgba(255,93,58,0.45);
-  white-space: nowrap;
-}
-.hero-mentor-name {
-  position: relative; z-index: 1;
-  font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 18px;
-  color: var(--text); line-height: 1.25; letter-spacing: -0.01em;
-  margin-bottom: 6px;
-}
-.hero-mentor-role {
-  position: relative; z-index: 1;
-  font-size: 11px; color: var(--text-muted); letter-spacing: 0.04em;
-}
+.cta-btn:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(255,93,58,0.45); }
+.cta-btn .arrow { transition: transform 0.15s; }
+.cta-btn:hover .arrow { transform: translateX(4px); }
 
-.hero-stats { display: flex; gap: 36px; flex-wrap: wrap; }
-.hero-stat .num {
-  font-family: 'Plus Jakarta Sans', sans-serif; font-size: 32px; font-weight: 800;
-  background: linear-gradient(135deg, var(--text) 0%, var(--text-muted) 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-}
-.hero-stat .label { font-size: 12px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.1em; }
+.cta-meta { font-size: 13px; color: var(--text-dim); margin-bottom: 40px; }
 
-/* ===== SECTION ===== */
-section.part { padding: 64px 64px; border-bottom: 1px solid var(--line); }
-@media (max-width: 920px) { section.part { padding: 40px 20px; } }
-.part-num {
-  font-family: 'JetBrains Mono', monospace; font-size: 12px; font-weight: 600;
-  letter-spacing: 0.15em; color: var(--accent); text-transform: uppercase;
-  margin-bottom: 8px; display: inline-block;
+.inside-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 10px; max-width: 640px; width: 100%;
+  margin-bottom: 48px;
 }
-.part h2 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: clamp(30px, 4vw, 44px); font-weight: 800; letter-spacing: -0.025em;
-  margin-bottom: 20px; line-height: 1.1;
-}
-.part h3 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 24px; font-weight: 700; letter-spacing: -0.015em;
-  margin: 40px 0 14px; line-height: 1.25;
-}
-.part h4 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 17px; font-weight: 700;
-  margin: 24px 0 10px; color: var(--text);
-}
-.part p { color: var(--text-muted); margin-bottom: 14px; max-width: 760px; }
-.part p strong { color: var(--text); font-weight: 600; }
-.part ul, .part ol { margin: 12px 0 18px 24px; color: var(--text-muted); }
-.part li { margin-bottom: 8px; max-width: 720px; }
-.part li::marker { color: var(--accent); }
-
-/* ===== STEP CARDS ===== */
-.steps { display: flex; flex-direction: column; gap: 18px; margin: 24px 0; }
-.step {
-  display: grid; grid-template-columns: 56px 1fr; gap: 20px;
-  padding: 22px; background: var(--bg-card); border: 1px solid var(--line);
-  border-radius: 14px;
-}
-.step .num {
-  width: 40px; height: 40px; border-radius: 10px;
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
-  color: #1a1207; font-weight: 800; font-size: 18px;
-  display: grid; place-items: center;
-  font-family: 'Plus Jakarta Sans', sans-serif;
-}
-.step .body h4 { margin-top: 0; margin-bottom: 6px; }
-.step .body p { margin-bottom: 0; }
-
-/* ===== IMAGES ===== */
-figure {
-  margin: 22px 0; background: var(--bg-elev); border: 1px solid var(--line);
-  border-radius: 14px; overflow: hidden;
-}
-figure img {
-  display: block; width: 100%; height: auto;
-}
-figcaption {
-  padding: 10px 16px; background: var(--bg-elev);
-  font-size: 13px; color: var(--text-muted); text-align: center;
-  border-top: 1px solid var(--line);
-  font-style: italic;
-}
-.figgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 14px; margin: 22px 0; }
-.figgrid figure { margin: 0; }
-
-/* ===== CALLOUTS ===== */
-.callout {
-  margin: 20px 0; padding: 16px 20px; border-radius: 12px;
-  border-left: 4px solid var(--accent);
-  background: rgba(255,93,58,0.05);
-  display: flex; gap: 14px; align-items: flex-start;
-}
-.callout .icon { font-size: 20px; line-height: 1; flex-shrink: 0; margin-top: 2px; }
-.callout .ct { color: var(--text-muted); }
-.callout strong { color: var(--text); display: block; margin-bottom: 2px; }
-.callout.tip { border-color: var(--green); background: rgba(56,211,159,0.06); }
-.callout.note { border-color: var(--accent-2); background: rgba(255,170,58,0.06); }
-.callout.warn { border-color: var(--red); background: rgba(255,91,110,0.06); }
-
-/* ===== KBD ===== */
-kbd {
-  font-family: 'JetBrains Mono', monospace; font-size: 12px;
-  background: var(--bg-elev); color: var(--text);
-  padding: 3px 7px; border-radius: 6px;
-  border: 1px solid var(--line); border-bottom-width: 2px;
-  font-weight: 600;
-}
-
-/* ===== YOUTUBE THUMBNAIL CARDS ===== */
-.yt-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; margin: 22px 0; }
-.yt-card { background: var(--bg-card); border: 1px solid var(--line); border-radius: 12px; overflow: hidden; transition: all 0.15s; display: block; cursor: pointer; }
-.yt-card:hover { border-color: var(--red); transform: translateY(-2px); box-shadow: 0 12px 28px rgba(255,91,110,0.15); }
-.yt-thumb { position: relative; padding-bottom: 56.25%; background: #000; overflow: hidden; }
-.yt-thumb img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s; }
-.yt-card:hover .yt-thumb img { transform: scale(1.05); }
-.yt-play {
-  position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-  width: 64px; height: 64px; border-radius: 50%;
-  background: rgba(255, 0, 0, 0.92);
-  display: grid; place-items: center;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.5);
-  transition: transform 0.15s;
-}
-.yt-card:hover .yt-play { transform: translate(-50%, -50%) scale(1.1); }
-.yt-play::before {
-  content: ""; width: 0; height: 0;
-  border-left: 22px solid white; border-top: 14px solid transparent; border-bottom: 14px solid transparent;
-  margin-left: 5px;
-}
-.yt-card .meta { padding: 12px 14px; }
-.yt-card .meta .label { font-size: 13px; font-weight: 600; line-height: 1.35; margin-bottom: 4px; color: var(--text); }
-.yt-card .meta .src { font-size: 11px; color: var(--text-dim); display: flex; align-items: center; gap: 6px; }
-.yt-card .meta .src::before { content: "▶"; color: var(--red); }
-
-/* ===== EXTERNAL LINK CARDS ===== */
-.link-list { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 10px; margin: 18px 0; }
-.link-card {
-  display: block; padding: 14px 16px; background: var(--bg-card);
+.inside-pill {
+  display: flex; align-items: center; gap: 8px;
+  padding: 10px 14px; background: var(--bg-card);
   border: 1px solid var(--line); border-radius: 10px;
-  transition: all 0.15s;
+  font-size: 13px; color: var(--text-muted);
 }
-.link-card:hover { border-color: var(--accent); transform: translateY(-1px); }
-.link-card .label { font-size: 13px; font-weight: 600; color: var(--text); margin-bottom: 3px; }
-.link-card .url { font-size: 11px; color: var(--text-dim); word-break: break-all; font-family: 'JetBrains Mono', monospace; }
-.link-card .url::after { content: " ↗"; color: var(--accent); }
-
-/* ===== FEATURE BOXES ===== */
-.feat-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 16px; margin: 24px 0; }
-.feat {
-  padding: 22px; background: var(--bg-card); border: 1px solid var(--line);
-  border-radius: 14px;
-}
-.feat .ft-icon { font-size: 24px; margin-bottom: 12px; }
-.feat .ft-title { font-weight: 700; font-size: 15px; margin-bottom: 6px; color: var(--text); }
-.feat .ft-text { font-size: 13px; color: var(--text-muted); line-height: 1.5; }
-
-/* ===== COMPARISON TABLE ===== */
-.cmp-wrap { overflow-x: auto; margin: 24px 0; border: 1px solid var(--line); border-radius: 14px; }
-table.cmp { width: 100%; border-collapse: collapse; min-width: 720px; }
-table.cmp th, table.cmp td { padding: 14px 16px; text-align: left; border-bottom: 1px solid var(--line); font-size: 14px; }
-table.cmp th { background: var(--bg-elev); color: var(--text); font-weight: 700; font-family: 'Plus Jakarta Sans', sans-serif; }
-table.cmp td:first-child { color: var(--text); font-weight: 500; }
-table.cmp td:not(:first-child) { color: var(--text-muted); }
-table.cmp tr:last-child td { border-bottom: 0; }
-table.cmp tr:hover td { background: rgba(255,93,58,0.03); }
-
-/* ===== SHORTCUTS ===== */
-.shortcuts { display: flex; flex-wrap: wrap; gap: 10px; margin: 18px 0; }
-.shortcut {
-  display: inline-flex; align-items: center; gap: 8px;
-  padding: 8px 14px; background: var(--bg-card); border: 1px solid var(--line);
-  border-radius: 100px; font-size: 13px;
-}
-.shortcut .label { color: var(--text-muted); font-size: 12px; }
-
-/* ===== COVER PIC ===== */
-.cover-img {
-  width: 100%; height: 240px; object-fit: cover; border-radius: 14px;
-  margin: 0 0 32px;
-  border: 1px solid var(--line);
+.inside-pill .dot {
+  width: 6px; height: 6px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent), var(--accent-2));
+  flex-shrink: 0;
 }
 
-/* ===== FOOTER ===== */
-footer {
-  padding: 56px 64px; color: var(--text-muted); font-size: 13px;
-  background: linear-gradient(180deg, var(--bg-soft) 0%, var(--bg) 100%);
-  border-top: 1px solid var(--line);
-}
-@media (max-width: 920px) { footer { padding: 36px 20px; } }
-.mentor-card {
-  display: grid; grid-template-columns: auto 1fr; gap: 28px; align-items: center;
-  max-width: 880px; margin: 0 auto 32px;
-  padding: 28px;
-  background: var(--bg-card); border: 1px solid var(--line); border-radius: 18px;
-  position: relative; overflow: hidden;
-}
-.mentor-card::before {
-  content: ""; position: absolute; inset: 0;
-  background: radial-gradient(ellipse at top right, rgba(255,93,58,0.08), transparent 60%);
-  pointer-events: none;
-}
-.mentor-photo-wrap { position: relative; z-index: 1; }
-.mentor-photo {
-  width: 130px; height: 130px; border-radius: 50%;
-  object-fit: cover; border: 3px solid var(--accent);
-  box-shadow: 0 8px 28px rgba(255,93,58,0.25);
-}
-
-/* Curated-by banner above the mentor card */
 .curated-by {
   display: flex; align-items: center; justify-content: center;
-  gap: 16px; max-width: 700px; margin: 0 auto 24px;
+  gap: 16px; max-width: 580px; width: 100%; margin: 0 auto 18px;
 }
 .curated-line {
   flex: 1; height: 1px;
@@ -378,1407 +131,111 @@ footer {
 }
 .curated-text {
   font-family: 'Plus Jakarta Sans', sans-serif;
-  font-size: 13px; font-weight: 500;
-  letter-spacing: 0.04em; color: var(--text-muted);
-  text-align: center; flex-shrink: 0; font-style: italic;
+  font-size: 12px; font-weight: 500; letter-spacing: 0.04em;
+  color: var(--text-muted); flex-shrink: 0; font-style: italic;
 }
-.curated-text strong {
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
-  -webkit-background-clip: text; -webkit-text-fill-color: transparent;
-  font-weight: 800; font-style: normal;
+.mentor-card {
+  display: flex; align-items: center; gap: 16px;
+  max-width: 460px; width: 100%;
+  padding: 18px 22px;
+  background: var(--bg-card); border: 1px solid var(--line); border-radius: 16px;
+  position: relative; overflow: hidden;
 }
-@media (max-width: 600px) {
-  .curated-text { font-size: 12px; }
+.mentor-card::before {
+  content: ""; position: absolute; inset: 0;
+  background: radial-gradient(ellipse at top right, rgba(255,93,58,0.08), transparent 60%);
+  pointer-events: none;
 }
-.mentor-info { position: relative; z-index: 1; }
+.mentor-photo {
+  width: 56px; height: 56px; border-radius: 50%;
+  object-fit: cover; border: 2px solid var(--accent);
+  box-shadow: 0 4px 16px rgba(255,93,58,0.25);
+  flex-shrink: 0; position: relative; z-index: 1;
+}
+.mentor-info { text-align: left; position: relative; z-index: 1; }
 .mentor-label {
-  display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: 0.15em; text-transform: uppercase;
-  color: var(--accent); padding: 4px 10px; background: rgba(255,93,58,0.12);
-  border: 1px solid rgba(255,93,58,0.25); border-radius: 100px; margin-bottom: 10px;
+  font-size: 9px; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase;
+  color: var(--accent); margin-bottom: 2px;
 }
 .mentor-name {
-  font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 800; font-size: 22px;
-  color: var(--text); letter-spacing: -0.01em; margin-bottom: 4px;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: 15px; font-weight: 700; color: var(--text);
 }
-.mentor-bio { font-size: 13px; color: var(--text-muted); margin-bottom: 16px; }
-.mentor-social {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 10px;
-}
-.social-link {
-  display: flex; align-items: center; gap: 12px;
-  padding: 10px 14px; background: var(--bg-elev);
-  border: 1px solid var(--line); border-radius: 10px;
-  transition: all 0.15s; text-decoration: none;
-}
-.social-link:hover { transform: translateY(-1px); background: rgba(255,93,58,0.05); }
-.social-link:hover { border-color: var(--accent); }
-.social-linkedin:hover { border-color: #0A66C2; }
-.social-instagram:hover { border-color: #E1306C; }
-.social-youtube:hover { border-color: #FF0000; }
-.social-icon { width: 26px; height: 26px; flex-shrink: 0; display: grid; place-items: center; color: var(--text-muted); }
-.social-icon svg { width: 22px; height: 22px; display: block; }
-.social-text { display: flex; flex-direction: column; min-width: 0; }
-.social-handle { font-size: 13px; font-weight: 600; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.social-platform { font-size: 11px; color: var(--text-dim); text-transform: uppercase; letter-spacing: 0.06em; }
-.footer-meta { text-align: center; color: var(--text-dim); font-size: 12px; line-height: 1.7; }
-@media (max-width: 600px) {
-  .mentor-card { grid-template-columns: 1fr; text-align: center; padding: 24px; }
-  .mentor-photo-wrap { width: fit-content; margin: 0 auto; }
-  .mentor-photo { width: 110px; height: 110px; }
-  .social-link { text-align: left; }
-}
+.mentor-bio { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
 
-/* ===== SMALL BANNER ===== */
-.banner-row { display: flex; gap: 12px; flex-wrap: wrap; margin: 20px 0; }
-.pill {
-  font-family: 'JetBrains Mono', monospace; font-size: 11px; font-weight: 600;
-  padding: 5px 11px; border-radius: 100px; letter-spacing: 0.04em;
-}
-.pill.ok { background: rgba(56,211,159,0.12); color: var(--green); border: 1px solid rgba(56,211,159,0.25); }
-.pill.warn { background: rgba(255,170,58,0.12); color: var(--accent-2); border: 1px solid rgba(255,170,58,0.25); }
-.pill.bad { background: rgba(255,91,110,0.12); color: var(--red); border: 1px solid rgba(255,91,110,0.25); }
-.pill.info { background: rgba(76,140,255,0.12); color: var(--blue); border: 1px solid rgba(76,140,255,0.25); }
-
-/* ===== RECIPE BOX ===== */
-.recipe { background: linear-gradient(135deg, rgba(176,124,255,0.06) 0%, rgba(60,207,208,0.06) 100%); border: 1px solid var(--line); border-radius: 14px; padding: 22px; margin: 22px 0; }
-.recipe .recipe-title { font-family: 'Plus Jakarta Sans', sans-serif; font-weight: 700; font-size: 16px; margin-bottom: 10px; color: var(--purple); }
-
-/* ===== VIDEO EMBED FOR HERO ===== */
-.hero-video {
-  background: #000; border: 1px solid var(--line); border-radius: 16px;
-  overflow: hidden; max-width: 720px; margin: 32px 0 0;
-  position: relative; padding-bottom: 40.625%;
-}
-.hero-video iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-
-/* ===== SIDEBAR + TOGGLE (overlay style) ===== */
-/* Layout: sidebar floats over content as an overlay drawer.
-   When closed, the sidebar is fully off-screen (no blank space).
-   Main content always fills the viewport, centered. */
-.wrap { display: block !important; max-width: 1100px; margin: 0 auto; }
-main { padding: 0; max-width: 100%; }
-
-.sidebar {
-  position: fixed; top: 0; left: 0;
-  width: 300px; height: 100vh;
-  padding: 80px 22px 32px;
+.site-footer {
+  text-align: center;
+  padding: 24px 20px;
+  font-size: 11px; color: var(--text-dim);
+  letter-spacing: 0.05em;
+  border-top: 1px solid var(--line);
   background: var(--bg-soft);
-  border-right: 1px solid var(--line);
-  overflow-y: auto;
-  z-index: 60;
-  transform: translateX(-100%);
-  transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
-  box-shadow: 12px 0 40px rgba(0, 0, 0, 0.0);
-}
-body.sidebar-open .sidebar {
-  transform: translateX(0);
-  box-shadow: 12px 0 40px rgba(0, 0, 0, 0.45);
 }
 
-/* Backdrop overlay */
-.sidebar-backdrop {
-  position: fixed; inset: 0; background: rgba(0, 0, 0, 0.55);
-  backdrop-filter: blur(2px);
-  opacity: 0; pointer-events: none;
-  transition: opacity 0.25s ease;
-  z-index: 55;
+@media (max-width: 600px) {
+  .hero { padding: 40px 18px; }
+  .apj-brand { margin-bottom: 26px; }
+  .lead { font-size: 16px; }
+  .cta-btn { padding: 14px 26px; font-size: 15px; }
+  .inside-grid { grid-template-columns: 1fr 1fr; }
 }
-body.sidebar-open .sidebar-backdrop {
-  opacity: 1; pointer-events: auto;
-}
-
-/* Toggle — sleek pill button with text + icon */
-.sidebar-toggle {
-  position: fixed; top: 18px; left: 20px; z-index: 70;
-  height: 42px; padding: 0 16px 0 14px; border-radius: 100px;
-  background: rgba(22,26,35,0.85);
-  backdrop-filter: blur(14px);
-  border: 1px solid rgba(255,255,255,0.08);
-  display: inline-flex; align-items: center; gap: 9px;
-  cursor: pointer; color: var(--text);
-  font-family: 'Inter', sans-serif; font-size: 13px; font-weight: 600;
-  letter-spacing: 0.01em;
-  transition: all 0.2s ease;
-  box-shadow: 0 8px 24px rgba(0,0,0,0.35);
-}
-.sidebar-toggle:hover {
-  border-color: rgba(255,93,58,0.5);
-  background: rgba(28,33,44,0.92);
-  transform: translateY(-1px);
-  box-shadow: 0 10px 28px rgba(0,0,0,0.45);
-}
-.sidebar-toggle .icon-stack {
-  position: relative; width: 16px; height: 14px;
-  display: inline-flex; flex-direction: column; justify-content: space-between;
-}
-.sidebar-toggle .icon-stack span {
-  display: block; width: 100%; height: 2px;
-  background: currentColor; border-radius: 2px;
-  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
-  transform-origin: center;
-}
-.sidebar-toggle .icon-stack span:nth-child(2) { width: 70%; }
-body.sidebar-open .sidebar-toggle { color: var(--accent); border-color: rgba(255,93,58,0.5); }
-body.sidebar-open .sidebar-toggle .icon-stack span:nth-child(1) { transform: translateY(6px) rotate(45deg); }
-body.sidebar-open .sidebar-toggle .icon-stack span:nth-child(2) { opacity: 0; transform: translateX(8px); }
-body.sidebar-open .sidebar-toggle .icon-stack span:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
-.sidebar-toggle .label-open { display: inline; }
-.sidebar-toggle .label-close { display: none; }
-body.sidebar-open .sidebar-toggle .label-open { display: none; }
-body.sidebar-open .sidebar-toggle .label-close { display: inline; }
-
-/* Push hero content down a bit so it's not under the toggle */
-.hero { padding-top: 100px; }
-@media (max-width: 920px) { .hero { padding-top: 84px; } }
-
-/* Sidebar inner styling tweaks for the overlay version */
-.sidebar h2 { margin-top: 4px; }
-.sidebar nav a:hover { background: rgba(255,93,58,0.06); color: var(--text); }
-
-/* Custom scrollbar for sidebar */
-.sidebar::-webkit-scrollbar { width: 6px; }
-.sidebar::-webkit-scrollbar-track { background: transparent; }
-.sidebar::-webkit-scrollbar-thumb { background: rgba(255,255,255,0.08); border-radius: 100px; }
-.sidebar::-webkit-scrollbar-thumb:hover { background: rgba(255,93,58,0.4); }
-
-/* Smooth scroll for whole page */
-html { scroll-padding-top: 80px; }
-
-/* Disable body scroll when sidebar is open on small screens */
-@media (max-width: 920px) {
-  body.sidebar-open { overflow: hidden; }
-  .sidebar { width: min(300px, 86vw); }
-  .sidebar-toggle { padding: 0 14px 0 12px; height: 38px; font-size: 12px; }
-}
-/* ===== END SIDEBAR ===== */
-
-/* ===== SCROLL TO TOP ===== */
-.scroll-top {
-  position: fixed; bottom: 24px; right: 24px; z-index: 65;
-  width: 46px; height: 46px; border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent) 0%, var(--accent-2) 100%);
-  border: none; cursor: pointer;
-  display: grid; place-items: center;
-  color: #1a1207;
-  box-shadow: 0 10px 24px rgba(255,93,58,0.35);
-  opacity: 0; transform: translateY(12px) scale(0.8); pointer-events: none;
-  transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.2s;
-}
-.scroll-top.show { opacity: 1; transform: translateY(0) scale(1); pointer-events: auto; }
-.scroll-top:hover { box-shadow: 0 14px 32px rgba(255,93,58,0.5); transform: translateY(-2px) scale(1.05); }
-.scroll-top:active { transform: translateY(0) scale(0.95); }
-.scroll-top svg { width: 20px; height: 20px; }
-@media (max-width: 600px) { .scroll-top { bottom: 16px; right: 16px; width: 42px; height: 42px; } }
 </style>
 </head>
 <body>
 
-<button class="sidebar-toggle" id="sidebarToggle" aria-label="Toggle table of contents">
-  <span class="icon-stack" aria-hidden="true">
-    <span></span><span></span><span></span>
-  </span>
-  <span class="label-open">Contents</span>
-  <span class="label-close">Close</span>
-</button>
-<div class="sidebar-backdrop" id="sidebarBackdrop"></div>
-<button class="scroll-top" id="scrollTop" aria-label="Scroll to top">
-  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-    <line x1="12" y1="19" x2="12" y2="5"></line>
-    <polyline points="5,12 12,5 19,12"></polyline>
-  </svg>
-</button>
+<main class="hero">
+  <div class="hero-inner">
 
-
-<div class="wrap">
-
-<!-- ===================== SIDEBAR ===================== -->
-<aside class="sidebar">
-  <h2>APJ NextGen AI</h2>
-  <div class="sub">Video Editing Class · Mentor — Shaid</div>
-  <nav>
-    <div class="group-label">VPN Setup</div>
-    <a href="#vpn-why">Why a VPN matters</a>
-    <a href="#vpn-android">Proton VPN (Android)</a>
-    <a href="#vpn-pc">Proton VPN (Windows)</a>
-    <a href="#vpn-ios">Proton VPN (iPhone / iPad)</a>
-
-    <div class="group-label">CapCut</div>
-    <a href="#cc-install">Install in India</a>
-    <a href="#cc-tour">Interface tour</a>
-    <a href="#cc-split">Split & cut clips</a>
-    <a href="#cc-keyframes">Keyframes</a>
-    <a href="#cc-transitions">Transitions</a>
-    <a href="#cc-effects">Effects & PIP overlay</a>
-    <a href="#cc-mask">Text masking</a>
-    <a href="#cc-walk">Walk-behind text</a>
-    <a href="#cc-color">Color grading</a>
-    <a href="#cc-hsl">HSL adjustment</a>
-    <a href="#cc-grades">Color recipes</a>
-    <a href="#cc-pro">Pro export trick</a>
-
-    <div class="group-label">Clipchamp</div>
-    <a href="#clip-vs">Clipchamp vs CapCut</a>
-    <a href="#clip-start">Getting started</a>
-    <a href="#clip-split">Split clips</a>
-    <a href="#clip-anim">Keyframes workaround</a>
-    <a href="#clip-trans">Transitions</a>
-    <a href="#clip-color">Color & filters</a>
-    <a href="#clip-export">Exporting</a><div class="group-label">Reference</div>
-    <a href="#compare">Tool comparison</a>
-    <a href="#mistakes">Common mistakes</a>
-      </nav>
-</aside>
-
-<!-- ===================== MAIN ===================== -->
-<main>
-
-<!-- HERO -->
-<div class="hero">
-  <div class="hero-grid">
-    <div class="hero-content">
-      <div class="apj-brand">
-        <img src="images/apj-logo.png" alt="APJ Academy logo" class="apj-logo">
-        <div class="apj-text">
-          <div class="apj-name">APJ Academy</div>
-          <div class="apj-tag">Lights Beyond Excellence</div>
-        </div>
-      </div>
-      <div class="hero-tag">Class Guide · Step-by-step · Visual</div>
-      <h1>APJ NextGen AI<br><span class="gradient">Video Editing</span> Class</h1>
-      <p class="lead">VPN setup, CapCut, and Clipchamp — explained step by step with screenshots, YouTube tutorials, and the CapCut Pro export trick. A class companion guide for APJ NextGen AI class students.</p>
-      <div class="hero-stats">
-        <div class="hero-stat"><div class="num">61</div><div class="label">Screenshots</div></div>
-        <div class="hero-stat"><div class="num">25</div><div class="label">Video tutorials</div></div>
+    <div class="apj-brand">
+      <img src="images/apj-logo.png" alt="APJ Academy logo" class="apj-logo">
+      <div class="apj-text">
+        <div class="apj-name">APJ Academy</div>
+        <div class="apj-tag">Learn Beyond Scoring</div>
       </div>
     </div>
-    <div class="hero-mentor">
-      <div class="hero-mentor-card">
-        <div class="hero-mentor-photo-wrap">
-          <img src="images/shaid-photo.jpeg" alt="Muhibbuddin Shaid Hakkeem" class="hero-mentor-photo">
-          <div class="hero-mentor-label">Mentor</div>
-        </div>
-        <div class="hero-mentor-name">Muhibbuddin<br>Shaid Hakkeem</div>
-      </div>
+
+    <div class="hero-tag">Class Notes · Free</div>
+
+    <h1>Notes from the<br><span class="gradient">Video Editing Class</span></h1>
+
+    <p class="lead">Step-by-step companion guide with screenshots — everything we covered in class on Proton VPN, CapCut, Wondershare, transitions, and exporting. Quick check-in below to access.</p>
+
+    <a href="https://tally.so/r/ODdzQk?Class=Video%20Editing" class="cta-btn">
+      Get Access
+      <span class="arrow">&rarr;</span>
+    </a>
+    <div class="cta-meta">Takes 10 seconds &middot; Used to send updates &amp; class reminders</div>
+
+    <div class="inside-grid">
+      <div class="inside-pill"><span class="dot"></span>Proton VPN setup</div>
+      <div class="inside-pill"><span class="dot"></span>CapCut walkthrough</div>
+      <div class="inside-pill"><span class="dot"></span>Wondershare Filmora</div>
+      <div class="inside-pill"><span class="dot"></span>Transitions &amp; effects</div>
+      <div class="inside-pill"><span class="dot"></span>Export &amp; upload</div>
+      <div class="inside-pill"><span class="dot"></span>Common mistakes</div>
     </div>
-  </div>
-</div>
 
-<!-- ============================== VPN ============================== -->
-<section class="part" id="vpn-why">
-  <span class="part-num">Part 1 · VPN Setup</span>
-  <h2>Why a VPN matters for video apps in India</h2>
-  <p>CapCut has been officially banned in India since 2020. The app does not appear on Indian Play Store, App Store, or Microsoft Store searches, and the desktop version refuses to run if it detects an Indian IP. A VPN solves this by routing your traffic through a server in another country, making the app think you are abroad.</p>
-
-  <div class="banner-row">
-    <span class="pill bad">Banned in India</span>
-    <span class="pill warn">VPN required</span>
-    <span class="pill ok">Personal use safe</span>
-  </div>
-
-  <h3>You'll need a VPN for these reasons</h3>
-  <ul>
-    <li><strong>Initial install</strong> — the app stores hide CapCut in India until your store region is changed AND a VPN is active.</li>
-    <li><strong>First launch</strong> — CapCut PC throws a Network Error on Indian IPs even after install.</li>
-    <li><strong>Some Pro features</strong> and stock content libraries are geo-blocked.</li>
-  </ul>
-
-  <div class="callout note">
-    <div class="icon">ℹ️</div>
-    <div class="ct"><strong>Individual users have not been prosecuted</strong>The ban is on app distribution, not personal use. Still, prefer a reputable VPN over random free APKs to stay safe.</div>
-  </div>
-
-  <h3>Recommended free / freemium VPNs</h3>
-  <div class="feat-grid">
-    <div class="feat">
-      <div class="ft-icon">🛡️</div>
-      <div class="ft-title">Proton VPN</div>
-      <div class="ft-text">Open source, free tier, no logs, no ads. Best choice. Used in this guide.</div>
+    <div class="curated-by">
+      <span class="curated-line"></span>
+      <span class="curated-text">Notes &amp; clips curated carefully by</span>
+      <span class="curated-line"></span>
     </div>
-    <div class="feat">
-      <div class="ft-icon">💨</div>
-      <div class="ft-title">Windscribe</div>
-      <div class="ft-text">10 GB free per month, multiple regions, fast.</div>
-    </div>
-    <div class="feat">
-      <div class="ft-icon">⚡</div>
-      <div class="ft-title">Hotspot Shield</div>
-      <div class="ft-text">Fast, popular, free tier with ads.</div>
-    </div>
-    <div class="feat">
-      <div class="ft-icon">🌐</div>
-      <div class="ft-title">Urban VPN</div>
-      <div class="ft-text">Completely free, lightweight, browser extension also.</div>
-    </div>
-  </div>
-</section>
 
-<!-- VPN ANDROID -->
-<section class="part" id="vpn-android">
-  <h2>Installing Proton VPN on Android</h2>
-
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body">
-      <h4>Download Proton VPN from the Play Store</h4>
-      <p>Open Google Play Store → search <strong>Proton VPN</strong> → tap Install → tap Open.</p>
-    </div></div>
-    <div class="step"><div class="num">2</div><div class="body">
-      <h4>Create a free Proton account</h4>
-      <p>Tap <strong>Create account</strong> → enter username and a strong password (email optional but recommended). You're auto-signed-in to the Free plan with unlimited data on USA, Netherlands, and Japan servers.</p>
-    </div></div>
-  </div>
-
-  <figure><img src="images/proton_a_01_signup.png" alt="Proton VPN Android sign-up"><figcaption>Proton VPN sign-up screen on Android</figcaption></figure>
-
-  <div class="steps">
-    <div class="step"><div class="num">3</div><div class="body">
-      <h4>Allow VPN connection permission</h4>
-      <p>Tap Quick Connect → Android pops up <em>"Connection request"</em> → tap OK. A small key icon appears in the status bar — that means the VPN is active.</p>
-    </div></div>
-  </div>
-
-
-  <div class="steps">
-    <div class="step"><div class="num">4</div><div class="body">
-      <h4>Connect to a server in the US, UK or Netherlands</h4>
-      <p>Tap United States (or any free flag) → wait for the green Connected text → open whatismyipaddress.com to verify your country shows abroad.</p>
-    </div></div>
-  </div>
-
-  <figure><img src="images/proton_a_03_connect.png" alt="Proton VPN Android connect"><figcaption>Connecting to a server on the Proton VPN Android app</figcaption></figure>
-
-  <div class="callout tip">
-    <div class="icon">💡</div>
-    <div class="ct"><strong>Tip — launch order matters</strong>Always launch the VPN BEFORE opening CapCut, Play Store, or any geo-restricted app. Switching the VPN on after often does not help — close and re-open the target app.</div>
-  </div>
-
-  <h3>Tweak Android settings for stable VPN</h3>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><h4>Always-on VPN</h4><p>Settings → Network &amp; Internet → VPN → gear icon next to Proton VPN → turn on <strong>Always-on VPN</strong> for auto-reconnect.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="body"><h4>Block leaks (optional)</h4><p>Turn on <strong>Block connections without VPN</strong> to prevent leaks. Toggle it off if non-VPN apps stop working.</p></div></div>
-  </div>
-</section>
-
-<!-- VPN PC -->
-<section class="part" id="vpn-pc">
-  <h2>Installing Proton VPN on Windows PC</h2>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><h4>Download for Windows</h4><p>Go to <strong>protonvpn.com/download</strong> → click <em>Get Proton VPN for Windows</em> → run the installer.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="body"><h4>Sign in or create account</h4><p>Use the same account from your phone, or sign up free.</p></div></div>
-    <div class="step"><div class="num">3</div><div class="body"><h4>Connect to US/UK</h4><p>Click <strong>Quick Connect</strong>, or pick a country from the list. Wait for green status.</p></div></div>
-  </div>
-  <div class="figgrid">
-    <figure><img src="images/vpn_05_download.png" alt=""><figcaption>Download prompt on the website</figcaption></figure>
-    <figure><img src="images/vpn_06_install.png" alt=""><figcaption>Installer for Windows</figcaption></figure>
-    <figure><img src="images/vpn_03_account.png" alt=""><figcaption>Account creation page</figcaption></figure>
-    <figure><img src="images/vpn_04_password.png" alt=""><figcaption>Generating a password</figcaption></figure>
-  </div>
-</section>
-
-<!-- VPN iOS -->
-<section class="part" id="vpn-ios">
-  <h2>Installing a VPN on iPhone / iPad</h2>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><p>Open App Store → search <strong>Proton VPN</strong> → tap Get → install.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="body"><p>Open the app → sign up or log in.</p></div></div>
-    <div class="step"><div class="num">3</div><div class="body"><p>Tap <strong>Quick Connect</strong>. iOS shows <em>Add VPN Configurations?</em> → tap <strong>Allow</strong>.</p></div></div>
-    <div class="step"><div class="num">4</div><div class="body"><p>Confirm with passcode / Face ID. Connection turns green.</p></div></div>
-  </div>
-</section>
-
-<!-- ============================== CAPCUT ============================== -->
-<section class="part" id="cc-install">
-  <span class="part-num">Part 2 · CapCut</span>
-  <h2>Installing CapCut in India</h2>
-
-  <h3>Method A — Windows PC</h3>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><h4>Change Windows region</h4><p>Press <kbd>Windows</kbd> + <kbd>I</kbd> → Time &amp; Language → Language &amp; Region → change country from India to <strong>United Kingdom</strong> or <strong>United States</strong>.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="body"><h4>Connect VPN to UK/USA</h4><p>(See Part 1.3 above.)</p></div></div>
-    <div class="step"><div class="num">3</div><div class="body"><h4>Download CapCut</h4><p>Go to <strong>capcut.com</strong> → Download for Windows → run the .exe installer.</p></div></div>
-  </div>
-  <div class="figgrid">
-    <figure><img src="images/capcut_01_site.png"><figcaption>CapCut official website</figcaption></figure>
-    <figure><img src="images/capcut_02_download.png"><figcaption>Download button for PC</figcaption></figure>
-  </div>
-
-  <div class="steps">
-    <div class="step"><div class="num">4</div><div class="body"><h4>Sign in</h4><p>Launch CapCut → Sign in with Google, TikTok, or Facebook.</p></div></div>
-    <div class="step"><div class="num">5</div><div class="body"><h4>Create your first project</h4><p>Click <strong>New Project</strong> → import → arrange clips on timeline.</p></div></div>
-  </div>
-  <div class="figgrid">
-    <figure><img src="images/capcut_03_signup.png"><figcaption>Sign-up screen</figcaption></figure>
-    <figure><img src="images/capcut_04_create_project.png"><figcaption>New Project</figcaption></figure>
-    <figure><img src="images/capcut_05_import.png"><figcaption>Import clips</figcaption></figure>
-    <figure><img src="images/capcut_06_arrange.png"><figcaption>Arrange on timeline</figcaption></figure>
-  </div>
-
-  <div class="callout warn">
-    <div class="icon">⚠️</div>
-    <div class="ct"><strong>Use the standalone installer</strong>Always download from <strong>capcut.com</strong>, NOT the Microsoft Store. The Pro export trick later only works on the standalone installer.</div>
-  </div>
-
-  <h3>Method B — Android</h3>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><p>Connect Proton VPN to UK/USA.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="body"><p>Play Store → Settings → General → Account preferences → Country and profiles. Wait for the country to update.</p></div></div>
-    <div class="step"><div class="num">3</div><div class="body"><p>Clear Play Store cache (long-press app → App info → Storage → Clear cache).</p></div></div>
-    <div class="step"><div class="num">4</div><div class="body"><p>Search <strong>CapCut</strong> on Play Store → Install.</p></div></div>
-    <div class="step"><div class="num">5</div><div class="body"><p>Open with VPN still on → sign in.</p></div></div>
-  </div>
-  <div class="figgrid">
-    <figure><img src="images/capcut_m_03_signup.png"><figcaption>Mobile sign-up</figcaption></figure>
-    <figure><img src="images/capcut_m_04_project.png"><figcaption>Create project on mobile</figcaption></figure>
-  </div>
-
-</section>
-
-<!-- TOUR -->
-<section class="part" id="cc-tour">
-  <h2>CapCut interface tour</h2>
-  <p>CapCut PC has 4 main areas: <strong>top-left</strong> media library, <strong>top-right</strong> preview, <strong>bottom</strong> timeline, <strong>right side</strong> properties panel. Take a moment to map these visually before diving into edits.</p>
-
-  <figure><img src="images/capcut_ui_2.jpg"><figcaption>The full CapCut PC editing interface — media library, preview, timeline, properties panel</figcaption></figure>
-
-  <h3>The toolbar above the timeline</h3>
-  <p>This is the bar you will touch the most. It holds split, undo/redo, snap, edit ratio, and preview options.</p>
-  <figure><img src="images/capcut_ui_4.jpg"><figcaption>Toolbar menu options above the timeline</figcaption></figure>
-
-  <h3>Cursor tools</h3>
-  <p>The cursor tools (top-left of the timeline area) let you switch between selection, split, and zoom modes for precise edits.</p>
-  <figure><img src="images/capcut_ui_3.jpg"><figcaption>Cursor tools on the CapCut timeline</figcaption></figure>
-
-  <h3>Quick shortcut bar</h3>
-  <figure><img src="images/capcut_ui_5.jpg"><figcaption>Quick shortcut tools — copy, delete, mirror, mute, freeze frame, etc.</figcaption></figure>
-
-  <h3>Track controls — Hide, Lock, Mute</h3>
-  <p>The little eye, lock, and speaker icons on each track are critical when you have multiple layers. Lock a finished track so you do not accidentally move it.</p>
-  <figure><img src="images/capcut_ui_6.jpg"><figcaption>Hide, Lock, and Mute controls per track</figcaption></figure>
-
-  <h3>Multi-track editing</h3>
-  <p>CapCut supports up to 10 stacked video tracks plus audio tracks — useful for picture-in-picture, overlays, and complex compositions.</p>
-  <figure><img src="images/capcut_ui_1.jpg"><figcaption>Multi-track timeline with overlays stacked above the main clip</figcaption></figure>
-
-  <h3>Keyboard shortcuts you'll use constantly</h3>
-  <div class="shortcuts">
-    <span class="shortcut"><kbd>Ctrl</kbd>+<kbd>B</kbd><span class="label">Split at playhead</span></span>
-    <span class="shortcut"><kbd>Ctrl</kbd>+<kbd>I</kbd><span class="label">Import media</span></span>
-    <span class="shortcut"><kbd>Space</kbd><span class="label">Play / Pause</span></span>
-    <span class="shortcut"><kbd>Alt</kbd>+<kbd>K</kbd><span class="label">Keyframe panel</span></span>
-    <span class="shortcut"><kbd>Ctrl</kbd>+<kbd>Z</kbd><span class="label">Undo</span></span>
-    <span class="shortcut"><kbd>Ctrl</kbd>+<kbd>Y</kbd><span class="label">Redo</span></span>
-    <span class="shortcut"><kbd>Ctrl</kbd>+<kbd>A</kbd><span class="label">Select all</span></span>
-    <span class="shortcut"><kbd>Delete</kbd><span class="label">Remove selected</span></span>
-  </div>
-</section>
-
-<!-- SPLIT -->
-<section class="part" id="cc-split">
-  <h2>Splitting and cutting clips</h2>
-
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><h4>Drag video to timeline</h4><p>The clip appears as a long bar at the bottom.</p></div></div>
-  </div>
-  <figure><img src="images/capcut_split_1.png"><figcaption>Add the video clip to the CapCut timeline</figcaption></figure>
-
-  <div class="steps">
-    <div class="step"><div class="num">2</div><div class="body"><h4>Trim from edges (optional)</h4><p>Drag the edge handles inwards to trim from start or end without splitting.</p></div></div>
-  </div>
-  <figure><img src="images/capcut_split_2.png"><figcaption>Drag the edge handles to trim the clip</figcaption></figure>
-
-  <div class="steps">
-    <div class="step"><div class="num">3</div><div class="body"><h4>Split at playhead</h4><p>Move the playhead (vertical white line) to the cut moment → click the scissors icon, or press <kbd>Ctrl</kbd>+<kbd>B</kbd>.</p></div></div>
-  </div>
-  <figure><img src="images/capcut_split_4.png"><figcaption>Position the playhead and split</figcaption></figure>
-
-  <div class="steps">
-    <div class="step"><div class="num">4</div><div class="body"><h4>Delete left / Delete right</h4><p>Use the <strong>Delete left</strong> and <strong>Delete right</strong> buttons in the toolbar to remove everything before or after the playhead instantly.</p></div></div>
-  </div>
-  <figure><img src="images/capcut_cut_delete.png"><figcaption>Delete left / Delete right toolbar buttons</figcaption></figure>
-
-  <div class="steps">
-    <div class="step"><div class="num">5</div><div class="body"><h4>Remove a middle section</h4><p>Split at the start of the section → split at the end → click the middle clip → press <kbd>Delete</kbd>. The remaining clips snap together.</p></div></div>
-  </div>
-
-  <div class="callout tip">
-    <div class="icon">🎯</div>
-    <div class="ct"><strong>Cut on action and on the beat</strong>If your video has music, split where the beat hits. If there's movement (a hand reaching, a head turning), cut just as the movement starts. The result feels professional even with no other effects.</div>
-  </div>
-
-  <h3>On CapCut Mobile</h3>
-  <p>Tap clip → <strong>Split</strong> in the bottom toolbar → tap <strong>Delete</strong> for the unwanted segment.</p>
-  <figure><img src="images/capcut_cut_mobile.png"><figcaption>Split and Delete options at the bottom of CapCut Mobile</figcaption></figure>
-
-  <div class="yt-grid">
-    <a class="yt-card" href="https://www.youtube.com/watch?v=eMt7IcYwe-k" target="_blank" rel="noopener"><div class="yt-thumb"><img src="https://img.youtube.com/vi/eMt7IcYwe-k/hqdefault.jpg" alt="Split clips beginner tutorial" loading="lazy"><div class="yt-play"></div></div><div class="meta"><div class="label">Split clips beginner tutorial</div><div class="src">YouTube</div></div></a>
-    <a class="yt-card" href="https://www.youtube.com/watch?v=7Z8kCYKGTD0" target="_blank" rel="noopener"><div class="yt-thumb"><img src="https://img.youtube.com/vi/7Z8kCYKGTD0/hqdefault.jpg" alt="Cut, trim, split (CapCut PC)" loading="lazy"><div class="yt-play"></div></div><div class="meta"><div class="label">Cut, trim, split (CapCut PC)</div><div class="src">YouTube</div></div></a>
-  </div>
-</section>
-
-<!-- KEYFRAMES -->
-<section class="part" id="cc-keyframes">
-  <h2>Keyframes for animation</h2>
-  <p>A keyframe is a marker that says: <em>at this moment, this property has this value</em>. Two keyframes with different values = animation. CapCut auto-generates the smooth motion in between.</p>
-
-  <h3>Zoom-in animation</h3>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><p>Click the clip on the timeline. The right-side properties panel appears.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="body"><p>Move the playhead to the start of the clip.</p></div></div>
-    <div class="step"><div class="num">3</div><div class="body"><p>In the right panel under <strong>Basic</strong>, find the diamond icon next to <strong>Scale</strong>. Click it — it turns orange. First keyframe at 100%.</p></div></div>
-    <div class="step"><div class="num">4</div><div class="body"><p>Move the playhead 2 seconds forward.</p></div></div>
-    <div class="step"><div class="num">5</div><div class="body"><p>Change Scale to <strong>120%</strong>. CapCut auto-adds a second keyframe.</p></div></div>
-    <div class="step"><div class="num">6</div><div class="body"><p>Press <kbd>Space</kbd> — the clip slowly zooms from 100 to 120.</p></div></div>
-  </div>
-
-  <h3>Fade-in animation</h3>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><p>Move playhead to start of clip.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="body"><p>Set <strong>Opacity = 0%</strong> → click the diamond.</p></div></div>
-    <div class="step"><div class="num">3</div><div class="body"><p>Move playhead 1 sec forward → set Opacity to 100%.</p></div></div>
-  </div>
-
-  <div class="feat-grid">
-    <div class="feat"><div class="ft-icon">📍</div><div class="ft-title">Position</div><div class="ft-text">Make text fly in from off-screen.</div></div>
-    <div class="feat"><div class="ft-icon">🔄</div><div class="ft-title">Rotation</div><div class="ft-text">Logo spinning 360° as a stinger.</div></div>
-    <div class="feat"><div class="ft-icon">🔍</div><div class="ft-title">Scale</div><div class="ft-text">Push in on a face during emotional moments.</div></div>
-    <div class="feat"><div class="ft-icon">🔊</div><div class="ft-title">Volume</div><div class="ft-text">Duck music down when someone speaks.</div></div>
-  </div>
-
-  <div class="yt-grid">
-    <a class="yt-card" href="https://www.youtube.com/watch?v=nLER1f51FPw" target="_blank" rel="noopener"><div class="yt-thumb"><img src="https://img.youtube.com/vi/nLER1f51FPw/hqdefault.jpg" alt="Keyframes step-by-step (PC)" loading="lazy"><div class="yt-play"></div></div><div class="meta"><div class="label">Keyframes step-by-step (PC)</div><div class="src">YouTube</div></div></a>
-    <a class="yt-card" href="https://www.youtube.com/watch?v=C563AeLl8eQ" target="_blank" rel="noopener"><div class="yt-thumb"><img src="https://img.youtube.com/vi/C563AeLl8eQ/hqdefault.jpg" alt="Master keyframes like a pro" loading="lazy"><div class="yt-play"></div></div><div class="meta"><div class="label">Master keyframes like a pro</div><div class="src">YouTube</div></div></a>
-    <a class="yt-card" href="https://www.youtube.com/watch?v=YKJc2YXmmKc" target="_blank" rel="noopener"><div class="yt-thumb"><img src="https://img.youtube.com/vi/YKJc2YXmmKc/hqdefault.jpg" alt="Smooth text & clip animation 2025" loading="lazy"><div class="yt-play"></div></div><div class="meta"><div class="label">Smooth text & clip animation 2025</div><div class="src">YouTube</div></div></a>
-  </div>
-</section>
-
-<!-- TRANSITIONS -->
-<section class="part" id="cc-transitions">
-  <h2>Transitions between clips</h2>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><p>Place two clips so they touch on the timeline.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="body"><p>Click the <strong>Transitions</strong> tab in the top-left.</p></div></div>
-    <div class="step"><div class="num">3</div><div class="body"><p>Browse: Basic, Camera, Light Effect, Glitch, Distortion, Slide, Mask, MG, Social Media, Overlay, Blur.</p></div></div>
-    <div class="step"><div class="num">4</div><div class="body"><p>Hover to preview, click the download icon if shown, then drag between the two clips.</p></div></div>
-    <div class="step"><div class="num">5</div><div class="body"><p>Click the transition box → set <strong>Duration</strong> in the right panel.</p></div></div>
-  </div>
-
-  <div class="callout note">
-    <div class="icon">📐</div>
-    <div class="ct"><strong>Duration limit</strong>Maximum transition duration = half the length of the shorter neighbouring clip. A 4 sec + 3 sec pair allows a 1.5 sec max transition.</div>
-  </div>
-
-  <h3>Apply one transition to ALL clips</h3>
-  <p>Drag your favourite transition between the first two clips → right-click the transition → <strong>Apply to all</strong>.</p>
-
-  <div class="yt-grid">
-    <a class="yt-card" href="https://www.youtube.com/watch?v=LrwgdRaukJo" target="_blank" rel="noopener"><div class="yt-thumb"><img src="https://img.youtube.com/vi/LrwgdRaukJo/hqdefault.jpg" alt="Apply same transition to all clips" loading="lazy"><div class="yt-play"></div></div><div class="meta"><div class="label">Apply same transition to all clips</div><div class="src">YouTube</div></div></a>
-  </div>
-</section>
-
-<!-- EFFECTS / PIP -->
-<section class="part" id="cc-effects">
-  <h2>Effects, overlays, and Picture-in-Picture</h2>
-
-  <h3>Add a video effect</h3>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><p>Click <strong>Effects → Video Effects</strong>.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="body"><p>Browse: Trending, Basic, Bling, Vintage, Atmosphere, Fantasy.</p></div></div>
-    <div class="step"><div class="num">3</div><div class="body"><p>Click an effect to download → drag onto timeline above your clip — sits on its own track.</p></div></div>
-    <div class="step"><div class="num">4</div><div class="body"><p>Click the effect → adjust intensity, speed, and color in the right panel.</p></div></div>
-  </div>
-  <figure><img src="images/capcut_07_effects.png"><figcaption>Effects panel — apply animated effects on top of clips</figcaption></figure>
-
-  <h3>Picture-in-Picture (PIP) overlay</h3>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><h4>Import main video</h4><p>Open your main clip in CapCut.</p></div></div>
-  </div>
-  <figure><img src="images/capcut_pip_1_import.png"><figcaption>Import the main video into CapCut</figcaption></figure>
-
-  <div class="steps">
-    <div class="step"><div class="num">2</div><div class="body"><h4>Open Overlay</h4><p>From the menu/toolbar, select <strong>Overlay</strong>.</p></div></div>
-  </div>
-  <figure><img src="images/capcut_pip_2_open.png"><figcaption>Open the Overlay feature</figcaption></figure>
-
-  <div class="steps">
-    <div class="step"><div class="num">3</div><div class="body"><h4>+ Add overlay</h4><p>Pick the second video, image, or stock clip you want to layer on top.</p></div></div>
-  </div>
-  <figure><img src="images/capcut_pip_3_add.png"><figcaption>Pick the overlay clip</figcaption></figure>
-
-  <div class="steps">
-    <div class="step"><div class="num">4</div><div class="body"><h4>Reposition and resize</h4><p>Drag corners on the canvas (PC) or pinch (mobile) to position and resize.</p></div></div>
-  </div>
-  <figure><img src="images/capcut_pip_4_resize.png"><figcaption>Reposition, resize, and rotate the PIP overlay</figcaption></figure>
-
-  <div class="steps">
-    <div class="step"><div class="num">5</div><div class="body"><h4>Customize</h4><p>Set <strong>Opacity</strong>, <strong>Blend mode</strong> (Screen for light leaks, Multiply for darks, Overlay for general), border, drop shadow, animation.</p></div></div>
-  </div>
-  <figure><img src="images/capcut_pip_5_edit.png"><figcaption>Edit overlay — opacity, blend, border, animation</figcaption></figure>
-
-  <div class="steps">
-    <div class="step"><div class="num">6</div><div class="body"><h4>Export</h4><p>Done. Hit Export.</p></div></div>
-  </div>
-  <figure><img src="images/capcut_pip_6_export.png"><figcaption>Export the finished PIP video</figcaption></figure>
-
-  <h3>Blend mode quick reference</h3>
-  <div class="feat-grid">
-    <div class="feat"><div class="ft-icon">✨</div><div class="ft-title">Screen</div><div class="ft-text">For stock light leaks, dust, glow overlays.</div></div>
-    <div class="feat"><div class="ft-icon">🌧️</div><div class="ft-title">Multiply</div><div class="ft-text">For rain, scratched film, dark overlays.</div></div>
-    <div class="feat"><div class="ft-icon">🏷️</div><div class="ft-title">Logo</div><div class="ft-text">Keep Opacity 60-70%, no blend mode.</div></div>
-    <div class="feat"><div class="ft-icon">📺</div><div class="ft-title">Reaction-cam PIP</div><div class="ft-text">Small corner overlay + thin border + drop shadow.</div></div>
-  </div>
-
-  <div class="yt-grid">
-    <a class="yt-card" href="https://www.youtube.com/watch?v=xlBbqDtNwvM" target="_blank" rel="noopener"><div class="yt-thumb"><img src="https://img.youtube.com/vi/xlBbqDtNwvM/hqdefault.jpg" alt="PIP in CapCut PC — Lesson 12" loading="lazy"><div class="yt-play"></div></div><div class="meta"><div class="label">PIP in CapCut PC — Lesson 12</div><div class="src">YouTube</div></div></a>
-    <a class="yt-card" href="https://www.youtube.com/watch?v=9CABdQXf3pE" target="_blank" rel="noopener"><div class="yt-thumb"><img src="https://img.youtube.com/vi/9CABdQXf3pE/hqdefault.jpg" alt="PIP video effect on CapCut PC" loading="lazy"><div class="yt-play"></div></div><div class="meta"><div class="label">PIP video effect on CapCut PC</div><div class="src">YouTube</div></div></a>
-  </div>
-</section>
-
-
-
-<!-- AUDIO & VOICEOVER -->
-<section class="part" id="cc-audio">
-  <h2>Adding audio, music, and voiceovers</h2>
-  <p>Sound is half the video. CapCut PC has one unified <strong>Audio</strong> tab that handles music, sound effects, voiceovers, and AI text-to-speech. Open it from the top toolbar.</p>
-
-  <figure><img src="images/audio_voice_4_panel.jpg"><figcaption>The Audio tab on the top toolbar — your sound command center</figcaption></figure>
-
-  <h3>Adding background music or a soundtrack</h3>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><h4>Open the Audio tab</h4><p>Click <strong>Audio</strong> in the top-left toolbar.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="body"><h4>Pick a category</h4><p>Sub-tabs: <strong>Music</strong> (CapCut's library), <strong>Sound Effects</strong>, <strong>Extract</strong> (rip from any video file), <strong>Voiceover</strong>, <strong>Text to Speech</strong>.</p></div></div>
-    <div class="step"><div class="num">3</div><div class="body"><h4>Hover &amp; preview</h4><p>Hover any track to hear it. Click the download icon, then click + to add to timeline. Or drag it directly onto the audio track below your video.</p></div></div>
-    <div class="step"><div class="num">4</div><div class="body"><h4>Trim and position</h4><p>Drag the edges of the audio bar to trim. Drag the bar left/right to align with visuals.</p></div></div>
-  </div>
-
-  <h3>Importing your own music file</h3>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><p>Press <kbd>Ctrl</kbd>+<kbd>I</kbd> and pick the .mp3, .wav, .aac, or .flac file.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="body"><p>Drag from the Media bin onto the audio track.</p></div></div>
-  </div>
-
-  <div class="callout warn">
-    <div class="icon">©️</div>
-    <div class="ct"><strong>Use copyright-safe music for social posts</strong>CapCut's built-in library is licensed for personal use, but check before commercial use. For YouTube/Reels avoid copyrighted commercial tracks — use Epidemic Sound, Artlist, or YouTube's free library.</div>
-  </div>
-
-  <h3>Recording a voiceover live in CapCut</h3>
-
-  <figure><img src="images/audio_voice_3_overview.jpg"><figcaption>The full voiceover workflow in CapCut</figcaption></figure>
-
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><h4>Position the playhead</h4><p>Move it to the moment in your video where you want narration to start.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="body"><h4>Click Audio → Voiceover</h4><p>It's the third option in the Audio sub-tabs.</p></div></div>
-    <div class="step"><div class="num">3</div><div class="body"><h4>Pick your microphone</h4><p>From the dropdown, choose your built-in mic or any USB mic you have plugged in.</p></div></div>
-  </div>
-  <figure><img src="images/audio_voice_5_record.jpg"><figcaption>Voiceover recording panel — mic dropdown, level meter, big record button</figcaption></figure>
-
-  <div class="steps">
-    <div class="step"><div class="num">4</div><div class="body"><h4>Hit Record</h4><p>Click the big red button. A 3-second countdown begins. Speak naturally as the video plays.</p></div></div>
-    <div class="step"><div class="num">5</div><div class="body"><h4>Stop &amp; save</h4><p>Click stop. The recording lands as a new audio track at the playhead position.</p></div></div>
-    <div class="step"><div class="num">6</div><div class="body"><h4>Trim and clean up</h4><p>Use <kbd>Ctrl</kbd>+<kbd>B</kbd> to split out breaths, mistakes, and long pauses → delete those segments.</p></div></div>
-  </div>
-  <figure><img src="images/audio_voice_8_split.jpg"><figcaption>Split the voiceover at unwanted breaths or mistakes, then delete</figcaption></figure>
-
-  <h3>Importing a pre-recorded voiceover</h3>
-  <p>If you record on your phone or in another app, just import the file via <kbd>Ctrl</kbd>+<kbd>I</kbd> and drag onto the timeline.</p>
-  <figure><img src="images/audio_voice_6_import.jpg"><figcaption>Drag pre-recorded voiceover audio onto the timeline</figcaption></figure>
-
-  <h3>AI Text-to-Speech voiceover</h3>
-  <p>Don't want to use your own voice? CapCut has a built-in TTS engine with multiple voices and accents.</p>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><p>Add a <strong>Text</strong> layer on the timeline with your script.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="body"><p>Select the text → in the right panel scroll to <strong>Text to speech</strong>.</p></div></div>
-    <div class="step"><div class="num">3</div><div class="body"><p>Pick a voice (English, Hindi, kid, deep narrator, etc.).</p></div></div>
-    <div class="step"><div class="num">4</div><div class="body"><p>Click <strong>Generate</strong>. CapCut creates an audio track from your text.</p></div></div>
-  </div>
-  <figure><img src="images/audio_voice_7_tts.jpg"><figcaption>Text-to-Speech — type once, get an AI voiceover</figcaption></figure>
-
-  <h3>Mixing voice with background music — volume ducking</h3>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><h4>Set base levels</h4><p>Voice peaks around <strong>-6 dB</strong>. Music around <strong>-18 dB</strong>.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="body"><h4>Manual ducking with keyframes</h4><p>On the music track, add a Volume keyframe at 0 dB just before the voice starts → another keyframe at -10 dB right after voice begins → reverse on the way out. Music dips while voice is speaking.</p></div></div>
-    <div class="step"><div class="num">3</div><div class="body"><h4>Or use Auto Volume</h4><p>Right-click the music track → Auto Volume. CapCut auto-ducks the music whenever it detects speech on another track.</p></div></div>
-  </div>
-
-  <figure><img src="images/audio_voice_9_place.jpg"><figcaption>Voiceover, music, and SFX stacked on multiple audio tracks</figcaption></figure>
-
-  <div class="callout tip">
-    <div class="icon">🎙️</div>
-    <div class="ct"><strong>Better voice in 30 seconds</strong>Record in a small room with soft surfaces (carpet, curtains, bed) — bathrooms and big rooms echo. Stand 6 inches from the mic. Speak slightly louder than normal conversation. After recording, in the right panel apply <strong>Voice enhance</strong> for a one-click cleanup.</div>
-  </div>
-
-  <div class="yt-grid">
-    <a class="yt-card" href="https://www.youtube.com/watch?v=nFZsK6YkZDM" target="_blank" rel="noopener"><div class="yt-thumb"><img src="https://img.youtube.com/vi/nFZsK6YkZDM/hqdefault.jpg" alt="Add Audio in CapCut PC — Music, SFX, Voiceover" loading="lazy"><div class="yt-play"></div></div><div class="meta"><div class="label">Add Audio in CapCut PC — Music, SFX &amp; Voiceover</div><div class="src">YouTube</div></div></a>
-    <a class="yt-card" href="https://www.youtube.com/watch?v=bW0bbmvR-cE" target="_blank" rel="noopener"><div class="yt-thumb"><img src="https://img.youtube.com/vi/bW0bbmvR-cE/hqdefault.jpg" alt="How to Record and Add Voiceover in CapCut PC" loading="lazy"><div class="yt-play"></div></div><div class="meta"><div class="label">Record and Add Voiceover in CapCut PC</div><div class="src">YouTube</div></div></a>
-    <a class="yt-card" href="https://www.youtube.com/watch?v=nI-NLiSh_nw" target="_blank" rel="noopener"><div class="yt-thumb"><img src="https://img.youtube.com/vi/nI-NLiSh_nw/hqdefault.jpg" alt="Voiceover in CapCut PC — Lesson 34" loading="lazy"><div class="yt-play"></div></div><div class="meta"><div class="label">Voiceover in CapCut PC — Lesson 34</div><div class="src">YouTube</div></div></a>
-  </div>
-</section>
-
-
-<!-- BEAT SYNC -->
-<section class="part" id="cc-beat">
-  <h2>Beat sync — match images and clips to music</h2>
-  <p>Beat-sync is the single biggest reason short-form videos feel "professional." When your cuts hit on the beat, the brain reads it as polished. CapCut PC has automatic beat detection (yellow markers on the timeline) that does the hard work for you.</p>
-
-  <div class="banner-row">
-    <span class="pill ok">Auto-detection works</span>
-    <span class="pill info">PC + Mobile</span>
-    <span class="pill warn">Needs music track first</span>
-  </div>
-
-  <h3>Step 1 — Drop your music on the timeline first</h3>
-  <p>Beat detection only works on a track that exists. Bring in your song before adding clips.</p>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><p>Audio tab → pick a track, or <kbd>Ctrl</kbd>+<kbd>I</kbd> to import your own.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="body"><p>Drag onto the audio row below your video timeline.</p></div></div>
-  </div>
-
-  <h3>Step 2 — Run automatic beat detection</h3>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><h4>Select the audio track</h4><p>Click on your music track on the timeline.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="body"><h4>Click Auto-Beat (or right-click → Beat Detection)</h4><p>On the toolbar above the timeline you'll see <strong>Auto-Beat</strong>. Or right-click the audio → <strong>Beat Detection</strong>.</p></div></div>
-    <div class="step"><div class="num">3</div><div class="body"><h4>Pick Beat 1 or Beat 2</h4><p><strong>Beat 1</strong> = main beats only (sparse, dramatic cuts). <strong>Beat 2</strong> = every beat including off-beats (faster, busier). Pick based on the energy you want.</p></div></div>
-    <div class="step"><div class="num">4</div><div class="body"><h4>Yellow dots appear</h4><p>CapCut scans the audio and drops a yellow marker at every detected beat. Zoom into the timeline to see them clearly.</p></div></div>
-  </div>
-
-  <div class="callout note">
-    <div class="icon">⌨️</div>
-    <div class="ct"><strong>Manual beat marking — press M</strong>If auto-detection misses subtle beats, you can tap them yourself. Play the song and press <kbd>M</kbd> on every beat you hear. Each press drops a manual marker. Mix this with auto-detection for hybrid control.</div>
-  </div>
-
-  <h3>Step 3 — Snap photos / clips to the beats</h3>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><h4>Drop your photos or clips</h4><p>Drag your images / clips onto the video track above the music. Each one becomes a separate segment.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="body"><h4>Trim each clip to the beat</h4><p>Drag the right edge of each photo/clip until its end snaps to the next yellow beat marker. CapCut snaps automatically when you get close.</p></div></div>
-    <div class="step"><div class="num">3</div><div class="body"><h4>Set default photo duration to match</h4><p>If you have many photos, click File → Settings → Editing → Default photo duration → set to a value that matches your average beat interval (e.g. 0.5 sec for fast music).</p></div></div>
-    <div class="step"><div class="num">4</div><div class="body"><h4>Add transitions on the beat</h4><p>Drop a transition (Whip, Zoom, Glitch) between two clips. Position it directly on a beat marker. The transition itself becomes the beat hit.</p></div></div>
-  </div>
-
-  <h3>Step 4 — Add visual punch on the drops</h3>
-  <p>For the big drops, layer effects keyframed to the beat:</p>
-  <ul>
-    <li><strong>Scale punch</strong> — keyframe Scale 100% just before the beat, 110% on the beat, back to 100% right after. Adds a heartbeat pulse.</li>
-    <li><strong>Shake</strong> — apply the Shake video effect for a few frames around the drop.</li>
-    <li><strong>Flash</strong> — drop a white solid for 1-2 frames on the heaviest beat.</li>
-    <li><strong>Speed ramp</strong> — slow down before the drop, snap to normal speed on the drop.</li>
-  </ul>
-
-  <h3>Photo slideshow workflow (montage style)</h3>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><p>Music first → run beat detection.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="body"><p>Select all your photos in the Media bin → drag them all to the timeline at once.</p></div></div>
-    <div class="step"><div class="num">3</div><div class="body"><p>Trim each to the beat (or set a uniform duration that matches the BPM).</p></div></div>
-    <div class="step"><div class="num">4</div><div class="body"><p>Apply Ken Burns — for each photo, add a Scale keyframe (100% start, 110% end). Adds movement to static images.</p></div></div>
-    <div class="step"><div class="num">5</div><div class="body"><p>Add transitions on every cut. Same transition (right-click → Apply to all) keeps it consistent.</p></div></div>
-    <div class="step"><div class="num">6</div><div class="body"><p>Color-grade so all photos feel like they belong to the same set.</p></div></div>
-  </div>
-
-  <div class="callout tip">
-    <div class="icon">🎯</div>
-    <div class="ct"><strong>Pick songs with clear beats</strong>Mumbling lo-fi or ambient pads will not auto-detect well. Use songs with prominent kicks and snares — EDM, hip-hop, dance, drum-led pop. The clearer the beat, the better the auto-detection.</div>
-  </div>
-
-  <div class="yt-grid">
-    <a class="yt-card" href="https://www.youtube.com/watch?v=GJJXYa2ktaI" target="_blank" rel="noopener"><div class="yt-thumb"><img src="https://img.youtube.com/vi/GJJXYa2ktaI/hqdefault.jpg" alt="Auto Beat Feature in CapCut PC — Lesson 26" loading="lazy"><div class="yt-play"></div></div><div class="meta"><div class="label">Auto Beat Feature in CapCut PC — Lesson 26</div><div class="src">YouTube</div></div></a>
-    <a class="yt-card" href="https://www.youtube.com/watch?v=eHYWEwuIW2Y" target="_blank" rel="noopener"><div class="yt-thumb"><img src="https://img.youtube.com/vi/eHYWEwuIW2Y/hqdefault.jpg" alt="How to Auto Sync Beats in CapCut" loading="lazy"><div class="yt-play"></div></div><div class="meta"><div class="label">How to Auto Sync Beats in CapCut</div><div class="src">YouTube</div></div></a>
-    <a class="yt-card" href="https://www.youtube.com/watch?v=wn_MDrlFJL0" target="_blank" rel="noopener"><div class="yt-thumb"><img src="https://img.youtube.com/vi/wn_MDrlFJL0/hqdefault.jpg" alt="Sync Photos to Music Beat" loading="lazy"><div class="yt-play"></div></div><div class="meta"><div class="label">Sync Photos to Music Beat — Tutorial</div><div class="src">YouTube</div></div></a>
-    <a class="yt-card" href="https://www.youtube.com/watch?v=aLPAKKqYZY4" target="_blank" rel="noopener"><div class="yt-thumb"><img src="https://img.youtube.com/vi/aLPAKKqYZY4/hqdefault.jpg" alt="Sync Photos and Videos with Beats — CapCut PC" loading="lazy"><div class="yt-play"></div></div><div class="meta"><div class="label">Sync Photos &amp; Videos with Beats — CapCut PC</div><div class="src">YouTube</div></div></a>
-  </div>
-</section>
-
-<!-- TEXT MASKING -->
-<section class="part" id="cc-mask">
-  <h2>Text masking — video inside text</h2>
-  <p>One of the most reused effects on Reels and TikTok. The video plays only inside the letters of your text.</p>
-
-  <div class="banner-row">
-    <span class="pill info">Beginner-friendly</span>
-    <span class="pill ok">Works on PC + Mobile</span>
-  </div>
-
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><h4>New project, import the video</h4><p>Drag your background video to the timeline.</p></div></div>
-  </div>
-  <figure><img src="images/textmask_create-a-new-project.webp"><figcaption>Create a new project and import the video</figcaption></figure>
-
-  <div class="steps">
-    <div class="step"><div class="num">2</div><div class="body"><h4>Add huge bold text</h4><p>Click <strong>Text → Add default text</strong>. Type a short word like BOLD or your name. Use a thick font (Impact, Anton, Bebas, Anton). Make font huge — <strong>200 pt+</strong>. Stretch the text bar to cover the full clip.</p></div></div>
-  </div>
-  <figure><img src="images/textmask_change-text-color.webp"><figcaption>Choose a thick font and set the color (use a flat green or solid color for the chroma trick)</figcaption></figure>
-
-  <div class="steps">
-    <div class="step"><div class="num">3</div><div class="body"><h4>Convert to overlay / use Mask</h4><p><strong>Method 1 (Mask):</strong> Right-click the text → Convert to overlay. Apply <strong>Mask</strong> using the text shape as the mask source.</p><p><strong>Method 2 (Chroma key):</strong> Make the text a flat green color, place a duplicate of your video <em>above</em> it on the timeline, then apply <strong>Chroma Key</strong> to the top video so it cuts out the green text shape.</p></div></div>
-  </div>
-  <figure><img src="images/textmask_use-chroma-key.webp"><figcaption>Apply Chroma Key on the top video — it punches a hole in the shape of the text</figcaption></figure>
-
-  <div class="steps">
-    <div class="step"><div class="num">4</div><div class="body"><h4>Adjust strength and shadow</h4><p>Inside the Chroma Key panel, adjust <strong>Strength</strong> and <strong>Shadow</strong> to at least 50 — until only the video shows inside the letters.</p></div></div>
-  </div>
-
-  <div class="steps">
-    <div class="step"><div class="num">5</div><div class="body"><h4>Stylize</h4><p>Add a thick stroke or a colored background underneath. Animate the text in with a slide or scale keyframe.</p></div></div>
-  </div>
-  <figure><img src="images/textmask_create-text-overlay-with-flexclip.webp"><figcaption>Final video-inside-text result with stylized stroke</figcaption></figure>
-
-  <div class="callout warn">
-    <div class="icon">⚠️</div>
-    <div class="ct"><strong>Always go thick and bold</strong>Thin fonts do not work for text masking. The visible video area becomes too narrow and the effect is lost. Use Impact, Anton, Bebas, or any heavy display font.</div>
-  </div>
-
-  <div class="yt-grid">
-    <a class="yt-card" href="https://www.youtube.com/watch?v=oJdVRVzLvVw" target="_blank" rel="noopener"><div class="yt-thumb"><img src="https://img.youtube.com/vi/oJdVRVzLvVw/hqdefault.jpg" alt="Text masking on CapCut PC" loading="lazy"><div class="yt-play"></div></div><div class="meta"><div class="label">Text masking on CapCut PC</div><div class="src">YouTube</div></div></a>
-    <a class="yt-card" href="https://www.youtube.com/watch?v=qDZoDwhEq5o" target="_blank" rel="noopener"><div class="yt-thumb"><img src="https://img.youtube.com/vi/qDZoDwhEq5o/hqdefault.jpg" alt="Reveal text mask tutorial" loading="lazy"><div class="yt-play"></div></div><div class="meta"><div class="label">Reveal text mask tutorial</div><div class="src">YouTube</div></div></a>
-    <a class="yt-card" href="https://www.youtube.com/watch?v=Hai5lrZDrkE" target="_blank" rel="noopener"><div class="yt-thumb"><img src="https://img.youtube.com/vi/Hai5lrZDrkE/hqdefault.jpg" alt="Mask text in CapCut (2025)" loading="lazy"><div class="yt-play"></div></div><div class="meta"><div class="label">Mask text in CapCut (2025)</div><div class="src">YouTube</div></div></a>
-    <a class="yt-card" href="https://www.youtube.com/watch?v=jkjbvKz_Lc0" target="_blank" rel="noopener"><div class="yt-thumb"><img src="https://img.youtube.com/vi/jkjbvKz_Lc0/hqdefault.jpg" alt="Text masking for beginners" loading="lazy"><div class="yt-play"></div></div><div class="meta"><div class="label">Text masking for beginners</div><div class="src">YouTube</div></div></a>
-  </div>
-</section>
-
-<!-- WALK-BEHIND TEXT -->
-<section class="part" id="cc-walk">
-  <h2>Walk-behind text reveal (advanced)</h2>
-  <p>This is the viral effect where text appears as if it is behind a person walking past. CapCut's auto background remover makes this dramatically easier than it used to be.</p>
-
-  <div class="banner-row">
-    <span class="pill warn">Advanced</span>
-    <span class="pill info">Works best on Mobile (auto BG remove)</span>
-  </div>
-
-  <h3>The full workflow</h3>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><h4>Film the shot</h4><p>Use a tripod. Film yourself walking past the camera for ~10 seconds. Then film the same scene WITHOUT you in it (a "clean plate") for 5 seconds. The static camera is critical.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="body"><h4>Build the base layer</h4><p>Open CapCut → New project → import the walking footage → drop on the timeline.</p></div></div>
-    <div class="step"><div class="num">3</div><div class="body"><h4>Add the text layer</h4><p>Add your text in big, bold style. Stretch it to fill the entire walking shot duration.</p></div></div>
-    <div class="step"><div class="num">4</div><div class="body"><h4>Export and re-import</h4><p>Export the project as a flat video. Re-import it back into CapCut as a new project. (This bakes the text into the footage so we can mask over it.)</p></div></div>
-    <div class="step"><div class="num">5</div><div class="body"><h4>Add the walking footage on top</h4><p>Above the baked video, add the original walking footage as an overlay.</p></div></div>
-    <div class="step"><div class="num">6</div><div class="body"><h4>Auto remove background</h4><p>Select the walking overlay → tap <strong>Remove BG → Auto removal</strong>. CapCut isolates your body from the background.</p></div></div>
-    <div class="step"><div class="num">7</div><div class="body"><h4>Done</h4><p>Now your body covers the text as you walk through it. The text appears to be physically behind you.</p></div></div>
-  </div>
-
-  <h3>Manual (no auto-removal) version</h3>
-  <p>If your phone doesn't have Auto Remove BG, do it with masks:</p>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><p>Place clip on Track 1, duplicate onto Track 3.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="body"><p>Add text on Track 2 between the two video layers.</p></div></div>
-    <div class="step"><div class="num">3</div><div class="body"><p>Select Track 3 → Mask → Custom shape.</p></div></div>
-    <div class="step"><div class="num">4</div><div class="body"><p>Mask out everything except your silhouette.</p></div></div>
-    <div class="step"><div class="num">5</div><div class="body"><p>Use keyframes on the mask Position to follow your body frame by frame as you walk.</p></div></div>
-  </div>
-
-  <div class="callout tip">
-    <div class="icon">📷</div>
-    <div class="ct"><strong>Filming tips that matter</strong><br>• Tripod, no camera shake.<br>• Plain background — fewer details = cleaner masking.<br>• Wear something that contrasts with the background.<br>• Walk slowly and at a steady pace.<br>• Always shoot a 5-sec clean plate after the take.</div>
-  </div>
-
-  <div class="yt-grid">
-    <a class="yt-card" href="https://www.youtube.com/watch?v=lINZBP0skrE" target="_blank" rel="noopener"><div class="yt-thumb"><img src="https://img.youtube.com/vi/lINZBP0skrE/hqdefault.jpg" alt="Text reveal behind moving subject" loading="lazy"><div class="yt-play"></div></div><div class="meta"><div class="label">Text reveal behind moving subject</div><div class="src">YouTube</div></div></a>
-    <a class="yt-card" href="https://www.youtube.com/watch?v=OPZr889a4Ag" target="_blank" rel="noopener"><div class="yt-thumb"><img src="https://img.youtube.com/vi/OPZr889a4Ag/hqdefault.jpg" alt="Walk past text reveal in CapCut" loading="lazy"><div class="yt-play"></div></div><div class="meta"><div class="label">Walk past text reveal in CapCut</div><div class="src">YouTube Shorts</div></div></a>
-  </div>
-</section>
-
-<!-- COLOR -->
-<section class="part" id="cc-color">
-  <h2>Color grading basics</h2>
-  <p>Click <strong>Adjust</strong> in the right panel. Work the sliders top to bottom.</p>
-
-  <ul>
-    <li><strong>Brightness</strong> — pull up if the shot is dark, down if blown out.</li>
-    <li><strong>Contrast</strong> — most phone footage is too flat. <strong>+10 to +20</strong> is a good starting point.</li>
-    <li><strong>Saturation</strong> — too much looks fake. Stay between -10 and +15.</li>
-    <li><strong>Sharpness</strong> — only if footage is soft. Max +10.</li>
-    <li><strong>Highlights</strong> — pull down to recover sky detail.</li>
-    <li><strong>Shadows</strong> — pull up to see dark detail without killing mood.</li>
-    <li><strong>Temperature</strong> — warm right for golden hour, cool left for moody.</li>
-    <li><strong>Tint</strong> — fix green / magenta color casts.</li>
-  </ul>
-
-  <div class="callout tip">
-    <div class="icon">🖥️</div>
-    <div class="ct"><strong>Always check on a bigger screen</strong>Phone screens are too saturated. What looks great on your phone often looks flat on a laptop. View the export on the platform you'll publish on (Instagram, YouTube) before sharing.</div>
-  </div>
-
-  <div class="yt-grid">
-    <a class="yt-card" href="https://www.youtube.com/watch?v=q8tp6NGLBEM" target="_blank" rel="noopener"><div class="yt-thumb"><img src="https://img.youtube.com/vi/q8tp6NGLBEM/hqdefault.jpg" alt="Color grading in CapCut — full tutorial" loading="lazy"><div class="yt-play"></div></div><div class="meta"><div class="label">Color grading in CapCut — full tutorial</div><div class="src">YouTube</div></div></a>
-    <a class="yt-card" href="https://www.youtube.com/watch?v=VJAjG7zJcDs" target="_blank" rel="noopener"><div class="yt-thumb"><img src="https://img.youtube.com/vi/VJAjG7zJcDs/hqdefault.jpg" alt="Before-After color grading transition" loading="lazy"><div class="yt-play"></div></div><div class="meta"><div class="label">Before-After color grading transition</div><div class="src">YouTube</div></div></a>
-  </div>
-</section>
-
-<!-- HSL -->
-<section class="part" id="cc-hsl">
-  <h2>HSL — the secret to cinematic color</h2>
-  <p><strong>HSL</strong> = Hue, Saturation, Lightness. Lets you change one specific color without touching the others. The secret behind the teal-and-orange look.</p>
-
-  <div class="figgrid">
-    <figure><img src="images/capcut_hsl_1.jpg"><figcaption>Open the HSL panel</figcaption></figure>
-    <figure><img src="images/capcut_hsl_3.jpg"><figcaption>Color circles for individual hue control</figcaption></figure>
-    <figure><img src="images/capcut_hsl_4.jpg"><figcaption>Hue, Saturation, Lightness sliders</figcaption></figure>
-    <figure><img src="images/capcut_hsl_5.jpg"><figcaption>Targeted color shift</figcaption></figure>
-    <figure><img src="images/capcut_hsl_8.jpg"><figcaption>Before / after with HSL applied</figcaption></figure>
-  </div>
-
-  <h3>How to use HSL</h3>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><p>Select your clip → click <strong>Adjust</strong> → scroll to <strong>HSL</strong>.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="body"><p>Click on a color circle (Red, Orange, Yellow, Green, Aqua, Blue, Purple, Pink).</p></div></div>
-    <div class="step"><div class="num">3</div><div class="body"><p>Three sliders appear: <strong>Hue</strong> (shift), <strong>Saturation</strong> (intensity), <strong>Lightness</strong> (brightness). Adjust.</p></div></div>
-    <div class="step"><div class="num">4</div><div class="body"><p>Repeat for each color you want to control.</p></div></div>
-  </div>
-</section>
-
-<!-- COLOR RECIPES -->
-<section class="part" id="cc-grades">
-  <h2>Color recipes you can copy</h2>
-
-  <div class="recipe">
-    <div class="recipe-title">🎬 Teal &amp; Orange — cinematic look</div>
-    <ul>
-      <li><strong>Orange:</strong> Saturation +15, Lightness +5 (pops skin tones).</li>
-      <li><strong>Yellow:</strong> Saturation -20, Hue toward Orange (kills sickly yellows).</li>
-      <li><strong>Aqua:</strong> Saturation +10.</li>
-      <li><strong>Blue:</strong> Saturation +20, Lightness -10 (deep skies and shadows).</li>
-      <li><strong>Green:</strong> Saturation -15, Hue toward Aqua.</li>
-    </ul>
-  </div>
-
-  <div class="recipe">
-    <div class="recipe-title">🌫️ Moody filmic look</div>
-    <ul>
-      <li>Pull Highlights down, Shadows up slightly.</li>
-      <li>Lower overall Saturation by 10-15.</li>
-      <li>HSL — lower Lightness on Reds and Oranges by -10.</li>
-      <li>Push Blues toward Cyan, Lightness -10.</li>
-      <li>Slight Tint to the left for green hint.</li>
-    </ul>
-  </div>
-
-  <div class="recipe">
-    <div class="recipe-title">🌅 Warm Golden — outdoor / family</div>
-    <ul>
-      <li>Temperature +10, Highlights -5, Saturation +10.</li>
-      <li>Use for sunset shots, family content, lifestyle.</li>
-    </ul>
-  </div>
-
-  <div class="recipe">
-    <div class="recipe-title">⚫ High contrast B&amp;W</div>
-    <ul>
-      <li>Saturation -100, Contrast +20, Shadows -10.</li>
-      <li>Use for emotional or moody storytelling.</li>
-    </ul>
-  </div>
-
-  <div class="recipe">
-    <div class="recipe-title">🌸 Pastel / Soft (beauty / fashion)</div>
-    <ul>
-      <li>Saturation -15, Highlights -10, Lightness on skin tones +10.</li>
-      <li>Great for Reels and aesthetic content.</li>
-    </ul>
-  </div>
-
-  <div class="recipe">
-    <div class="recipe-title">📼 Faded Film (vintage)</div>
-    <ul>
-      <li>Use Faded preset, lift Shadows up to 20, lower Contrast by 10.</li>
-      <li>Add film grain at low intensity.</li>
-    </ul>
-  </div>
-
-  <div class="callout tip">
-    <div class="icon">💾</div>
-    <div class="ct"><strong>Save as preset</strong>In the Adjust panel, click the Save as preset icon. Apply your recipe to every clip in one click.</div>
-  </div>
-</section>
-
-<!-- PRO EXPORT TRICK -->
-<section class="part" id="cc-pro">
-  <h2>The CapCut Pro export trick (free, no watermark)</h2>
-  <p>This is the trick from your Tamil reference video. It uses CapCut's pre-process engine to render Pro effects into a hidden cache folder, which you re-import.</p>
-
-
-  <div class="callout warn">
-    <div class="icon">⚠️</div>
-    <div class="ct"><strong>Workaround, not a hack</strong>Personal learning use only. Buy CapCut Pro for commercial work — the team behind it deserves the support.</div>
-  </div>
-
-  <h3>Step 1 — Check version</h3>
-  <p>Open CapCut → click your profile → check the version number. The trick is most reliable on <strong>v5.x</strong>. Newer versions (7.x+) sometimes encrypt the cache.</p>
-
-  <h3>Step 2 — Build edit with Pro effects</h3>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><p>Edit normally — cuts, transitions, text, music.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="body"><p>Apply any Pro effects you want (they show a Pro tag — that's fine).</p></div></div>
-    <div class="step"><div class="num">3</div><div class="body"><p>Preview to confirm everything looks right.</p></div></div>
-  </div>
-
-  <h3>Step 3 — Compound clip</h3>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><p>Press <kbd>Ctrl</kbd>+<kbd>A</kbd> to select all clips, audio, text, and effects.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="body"><p>Right-click → <strong>Create compound clip</strong>.</p></div></div>
-    <div class="step"><div class="num">3</div><div class="body"><p>Timeline shows one merged green block.</p></div></div>
-  </div>
-
-  <h3>Step 4 — Apply Motion Blur and pre-process</h3>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><p>With the compound clip selected, go to the right-side properties panel.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="body"><p>Scroll down through the panel until you find <strong>Motion Blur</strong>.</p></div></div>
-    <div class="step"><div class="num">3</div><div class="body"><p>Slide the Motion Blur value all the way to <strong>0</strong>.</p></div></div>
-    <div class="step"><div class="num">4</div><div class="body"><p>This forces CapCut to pre-process the compound clip with the Pro effects baked in.</p></div></div>
-    <div class="step"><div class="num">5</div><div class="body"><p>Wait for the progress bar to reach <strong>100%</strong>. Do not move on until it is fully done.</p></div></div>
-  </div>
-
-  <h3>Step 5 — Open the hidden cache folder</h3>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><p>Press <kbd>Win</kbd>+<kbd>R</kbd> → type <strong>appdata</strong> → Enter.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="body"><p>In the address bar, replace <em>Roaming</em> with <em>Local</em> → Enter.</p></div></div>
-    <div class="step"><div class="num">3</div><div class="body"><p>Navigate to: <code style="font-family: 'JetBrains Mono', monospace; font-size: 12px; background: var(--bg-elev); padding: 2px 6px; border-radius: 4px;">Local → CapCut → User Data → Projects → com.lveditor.draft → [Project Name] → Resources → Video Alg</code></p></div></div>
-    <div class="step"><div class="num">4</div><div class="body"><p>Inside <strong>Video Alg</strong> you'll find the .mp4 file with all the Pro features rendered into it (ignore .alpha files).</p></div></div>
-  </div>
-
-  <div class="callout note">
-    <div class="icon">📁</div>
-    <div class="ct"><strong>If AppData is hidden</strong>In File Explorer: View → Show → Hidden items.</div>
-  </div>
-
-  <h3>Step 6 — Re-import into CapCut and export</h3>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><p>Copy the .mp4 from the Video Alg folder to your Desktop.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="body"><p>Back in CapCut, press <kbd>Ctrl</kbd>+<kbd>I</kbd> → import the .mp4.</p></div></div>
-    <div class="step"><div class="num">3</div><div class="body"><p>Drag onto the timeline (or onto the compound clip and choose Replace).</p></div></div>
-    <div class="step"><div class="num">4</div><div class="body"><p>Click Export → set <strong>1080p or 4K, MP4, 30 or 60 fps</strong>.</p></div></div>
-    <div class="step"><div class="num">5</div><div class="body"><p>Export. Pro features are baked in, so no watermark, all effects intact.</p></div></div>
-  </div>
-
-  <h3>If it fails</h3>
-  <ul>
-    <li>Make sure you used the standalone installer, NOT the Microsoft Store version.</li>
-    <li>Try downgrading CapCut to v5.x.</li>
-    <li>Make sure Motion Blur was set to 0 AND pre-processing reached 100% before grabbing the .mp4.</li>
-    <li>Check the <strong>Video Alg</strong> folder, not Combination — newer versions store the rendered file under Video Alg.</li>
-    <li>If the .mp4 plays without effects, the cache was deleted; redo Step 4 immediately.</li>
-  </ul>
-
-</section>
-
-<!-- ============================== CLIPCHAMP ============================== -->
-<section class="part" id="clip-vs">
-  <span class="part-num">Part 3 · Clipchamp</span>
-  <h2>Clipchamp vs CapCut — when to use which</h2>
-  <p>Clipchamp is Microsoft's free video editor, pre-installed on Windows 11 and also available as a browser app at <strong>clipchamp.com</strong>. Microsoft acquired it in 2021.</p>
-
-  <div class="banner-row">
-    <span class="pill ok">No India ban</span>
-    <span class="pill ok">No watermark</span>
-    <span class="pill bad">No keyframes</span>
-    <span class="pill bad">No HSL</span>
-  </div>
-
-  <h3>Key differences from CapCut</h3>
-  <div class="feat-grid">
-    <div class="feat"><div class="ft-icon">🌐</div><div class="ft-title">Browser-based</div><div class="ft-text">Runs in Chrome/Edge with no install. CapCut PC is a desktop app.</div></div>
-    <div class="feat"><div class="ft-icon">⚠️</div><div class="ft-title">Limited keyframes</div><div class="ft-text">Animate presets only. Real keyframes need CapCut.</div></div>
-    <div class="feat"><div class="ft-icon">✨</div><div class="ft-title">Simpler UI</div><div class="ft-text">Easier to learn. Good for quick edits and slideshows.</div></div>
-    <div class="feat"><div class="ft-icon">🔒</div><div class="ft-title">No India restrictions</div><div class="ft-text">Works without VPN.</div></div>
-    <div class="feat"><div class="ft-icon">🎨</div><div class="ft-title">Limited color</div><div class="ft-text">Brightness, contrast, saturation, exposure, temperature only. No HSL or masks.</div></div>
-    <div class="feat"><div class="ft-icon">💧</div><div class="ft-title">No watermark</div><div class="ft-text">Free version exports clean — a real strength.</div></div>
-  </div>
-
-  <h3>When to use Clipchamp</h3>
-  <ul>
-    <li>Quick edits where you do not need keyframes or HSL.</li>
-    <li>Family videos, slideshows, simple corporate clips.</li>
-    <li>If your laptop is low on disk space (browser-based).</li>
-    <li>If you are inside the Microsoft 365 ecosystem already.</li>
-  </ul>
-
-  <h3>When NOT to use it</h3>
-  <ul>
-    <li>Cinematic color grading — use CapCut.</li>
-    <li>Complex motion graphics with keyframes — use CapCut.</li>
-    <li>Mobile-first editing on phone — use CapCut Mobile.</li>
-  </ul>
-</section>
-
-<section class="part" id="clip-start">
-  <h2>Getting started with Clipchamp</h2>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><p>Open Edge or Chrome → <strong>clipchamp.com</strong>.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="body"><p>Click <strong>Try for free</strong> → sign in with Microsoft, Google or email.</p></div></div>
-    <div class="step"><div class="num">3</div><div class="body"><p>Click <strong>Create a new video</strong>.</p></div></div>
-    <div class="step"><div class="num">4</div><div class="body"><p>Choose aspect ratio: 16:9 (YouTube), 9:16 (Reels), 1:1 (Insta feed).</p></div></div>
-  </div>
-  <figure><img src="images/clip_01_overview.png"><figcaption>The Clipchamp web editor</figcaption></figure>
-
-  <h3>Interface layout</h3>
-  <div class="figgrid">
-    <figure><img src="images/clip_02_uidiagram.png"><figcaption>Labelled diagram of the four UI sections</figcaption></figure>
-    <figure><img src="images/clip_03_lefttool.png"><figcaption>Left toolbar — media, templates, text, transitions, effects</figcaption></figure>
-    <figure><img src="images/clip_04_rightpanel.png"><figcaption>Right property panel — captions, audio, filters, color, speed</figcaption></figure>
-    <figure><img src="images/clip_07_timeline.png"><figcaption>Timeline at the bottom — cuts, playback, zoom controls</figcaption></figure>
-  </div>
-</section>
-
-<section class="part" id="clip-split">
-  <h2>Splitting clips in Clipchamp</h2>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><p>Click <strong>Import media</strong> (top-left), add your video, drag onto timeline.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="body"><p>Click the clip on the timeline (it gets a blue border).</p></div></div>
-    <div class="step"><div class="num">3</div><div class="body"><h4>Move the seeker to your cut point</h4></div></div>
-  </div>
-  <figure><img src="images/clip_split_1_seeker.png"><figcaption>Move the seeker on the timeline</figcaption></figure>
-
-  <div class="steps">
-    <div class="step"><div class="num">4</div><div class="body"><h4>Click the scissors icon — or press S</h4></div></div>
-  </div>
-  <figure><img src="images/clip_split_2_scissors.png"><figcaption>Click the scissors icon (or press S)</figcaption></figure>
-
-  <div class="steps">
-    <div class="step"><div class="num">5</div><div class="body"><h4>Clip is now split into two</h4></div></div>
-  </div>
-  <figure><img src="images/clip_split_3_two_parts.png"><figcaption>The clip is now in two pieces</figcaption></figure>
-
-  <div class="steps">
-    <div class="step"><div class="num">6</div><div class="body"><h4>Delete the unwanted segment</h4><p>Right-click the unwanted clip and choose Delete.</p></div></div>
-  </div>
-  <figure><img src="images/clip_split_4_delete.png"><figcaption>Remove the unwanted segment</figcaption></figure>
-</section>
-
-<section class="part" id="clip-anim">
-  <h2>Keyframes in Clipchamp (and the workaround)</h2>
-  <div class="callout warn">
-    <div class="icon">⚠️</div>
-    <div class="ct"><strong>Important — Clipchamp does NOT support full keyframe animation</strong>You cannot keyframe Scale, Position, Opacity, Rotation, or Volume manually like in CapCut. This is the single biggest limitation vs CapCut.</div>
-  </div>
-
-  <h3>Workarounds for animation</h3>
-  <ul>
-    <li>Use built-in <strong>Animate</strong> options on text and images (Fade in, Slide in, Zoom in, Bounce). Click your asset → Animate tab → choose preset.</li>
-    <li>For video zooms: split the clip into 2 parts, apply different Crop/Zoom levels via Filters, and put a transition between them.</li>
-    <li>Use <strong>Speed ramping</strong> (right panel → Speed) to fake dynamic moves.</li>
-    <li>If you really need keyframes, edit in CapCut and re-import the result into Clipchamp.</li>
-  </ul>
-
-  <h3>Apply built-in animation</h3>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><p>Click any text or image asset on the timeline.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="body"><p>Click <strong>Animate</strong> in the right panel.</p></div></div>
-    <div class="step"><div class="num">3</div><div class="body"><p>Pick from In, Out, or Both presets.</p></div></div>
-    <div class="step"><div class="num">4</div><div class="body"><p>Adjust Duration with the slider.</p></div></div>
-  </div>
-</section>
-
-<section class="part" id="clip-trans">
-  <h2>Transitions in Clipchamp</h2>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><p>Place two clips next to each other on the timeline.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="body"><p>Click <strong>Transitions</strong> in the left toolbar.</p></div></div>
-    <div class="step"><div class="num">3</div><div class="body"><p>Categories: Crossfade, Fade to Black, Wipe, Spin, Slide, Heart, Zoom, etc.</p></div></div>
-    <div class="step"><div class="num">4</div><div class="body"><p>Drag the chosen transition between the two clips.</p></div></div>
-    <div class="step"><div class="num">5</div><div class="body"><p>Click the transition box → drag the Duration slider (0.1s to 2s typical).</p></div></div>
-  </div>
-  <div class="figgrid">
-    <figure><img src="images/clip_t_04_drag.png"><figcaption>Dragging a transition between two clips</figcaption></figure>
-    <figure><img src="images/clip_t_05_apply.png"><figcaption>Transition applied at the cut point</figcaption></figure>
-    <figure><img src="images/clip_t_06_duration.png"><figcaption>Adjusting transition duration</figcaption></figure>
-  </div>
-
-  <div class="yt-grid">
-    <a class="yt-card" href="https://www.youtube.com/watch?v=rUsoT976QyE" target="_blank" rel="noopener"><div class="yt-thumb"><img src="https://img.youtube.com/vi/rUsoT976QyE/hqdefault.jpg" alt="Clipchamp transitions tutorial" loading="lazy"><div class="yt-play"></div></div><div class="meta"><div class="label">Clipchamp transitions tutorial</div><div class="src">YouTube</div></div></a>
-    <a class="yt-card" href="https://www.youtube.com/watch?v=aRYf94TNzGc" target="_blank" rel="noopener"><div class="yt-thumb"><img src="https://img.youtube.com/vi/aRYf94TNzGc/hqdefault.jpg" alt="Add new transitions" loading="lazy"><div class="yt-play"></div></div><div class="meta"><div class="label">Add new transitions</div><div class="src">YouTube</div></div></a>
-  </div>
-</section>
-
-<section class="part" id="clip-color">
-  <h2>Colour adjustments in Clipchamp</h2>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><p>Click your clip.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="body"><p>In the right panel, click <strong>Adjust colors</strong>.</p></div></div>
-    <div class="step"><div class="num">3</div><div class="body"><p>Sliders: Exposure, Contrast, Saturation, Temperature, Vibrance.</p></div></div>
-  </div>
-
-  <div class="callout warn">
-    <div class="icon">⚠️</div>
-    <div class="ct"><strong>No HSL, no color wheels, no masks</strong>For cinematic color grading you need CapCut. Use Clipchamp's built-in filters as a quick base look, then fine-tune the sliders.</div>
-  </div>
-</section>
-
-<section class="part" id="clip-export">
-  <h2>Exporting from Clipchamp</h2>
-  <div class="steps">
-    <div class="step"><div class="num">1</div><div class="body"><p>Click <strong>Export</strong> in the top-right.</p></div></div>
-    <div class="step"><div class="num">2</div><div class="body"><p>Choose resolution: 480p, 720p, or 1080p (free). 4K requires Premium.</p></div></div>
-    <div class="step"><div class="num">3</div><div class="body"><p>File downloads as MP4 to your computer.</p></div></div>
-  </div>
-  <figure><img src="images/clip_t_07_export.png"><figcaption>Clipchamp export dialog</figcaption></figure>
-
-  <div class="callout tip">
-    <div class="icon">✅</div>
-    <div class="ct"><strong>No watermark in the free version</strong>Clipchamp does not need a workaround like CapCut Pro. This is a real strength for casual edits.</div>
-  </div>
-</section>
-
-<!-- ============================== COMPARISON ============================== -->
-<section class="part" id="compare">
-  <span class="part-num">Part 5 · Reference</span>
-  <h2>Tool comparison cheat sheet</h2>
-  <div class="cmp-wrap">
-    <table class="cmp">
-      <thead><tr><th>Feature</th><th>CapCut</th><th>Clipchamp</th></tr></thead>
-      <tbody>
-        <tr><td>Cost</td><td>Free + Pro tier</td><td>Free (Premium for 4K)</td></tr>
-        <tr><td>Platforms</td><td>PC, Mac, Android, iOS</td><td>Web, Win 11</td></tr>
-        <tr><td>Available in India</td><td><span class="pill warn">VPN needed</span></td><td><span class="pill ok">Yes</span></td></tr>
-        <tr><td>Watermark on free</td><td>Yes (use trick)</td><td>No</td></tr>
-        <tr><td>Keyframes</td><td>Full</td><td>Limited (Animate presets)</td></tr>
-        <tr><td>Transitions</td><td>100+ animated</td><td>30+ basic</td></tr>
-        <tr><td>Text masking</td><td>Yes</td><td>No</td></tr>
-        <tr><td>HSL color</td><td>Yes</td><td>No</td></tr>
-        <tr><td>Color wheels</td><td>Yes</td><td>No</td></tr>
-        <tr><td>LUT support</td><td>Yes (Pro tier)</td><td>No</td></tr>
-        <tr><td>Multi-track</td><td>Up to 10</td><td>Limited</td></tr>
-        <tr><td>Best for</td><td>Reels, TikTok, social</td><td>Quick edits, slideshows</td></tr>
-        <tr><td>Learning curve</td><td>Medium</td><td>Low</td></tr>
-      </tbody>
-    </table>
-  </div>
-
-  <h3>The honest recommendation</h3>
-  <ul>
-    <li>Start on <strong>CapCut</strong> — covers 80% of what most creators need.</li>
-    <li>Use <strong>Clipchamp</strong> on Windows 11 for fast, no-watermark cuts of presentations and family content.</li>
-  </ul>
-</section>
-
-<!-- COMMON MISTAKES -->
-<section class="part" id="mistakes">
-  <h2>Common mistakes to avoid</h2>
-  <div class="feat-grid">
-    <div class="feat"><div class="ft-icon">🚫</div><div class="ft-title">Skip-the-VPN trap</div><div class="ft-text">CapCut PC throws Network Error in India without a VPN active before launch.</div></div>
-    <div class="feat"><div class="ft-icon">🏪</div><div class="ft-title">Microsoft Store version</div><div class="ft-text">The Pro export trick only works on the standalone .exe from capcut.com.</div></div>
-    <div class="feat"><div class="ft-icon">💫</div><div class="ft-title">Too many transitions</div><div class="ft-text">One or two styles per video — max.</div></div>
-    <div class="feat"><div class="ft-icon">🌈</div><div class="ft-title">Over-saturation</div><div class="ft-text">Pushing Saturation and Sharpness too far. Subtle wins.</div></div>
-    <div class="feat"><div class="ft-icon">🎚️</div><div class="ft-title">Bad audio levels</div><div class="ft-text">Voice peaks ~-6 dB, music ~-18 dB. Always check before exporting.</div></div>
-    <div class="feat"><div class="ft-icon">🅰️</div><div class="ft-title">Thin fonts for masks</div><div class="ft-text">Use Impact, Anton, Bebas. Thin fonts kill the masking effect.</div></div>
-    <div class="feat"><div class="ft-icon">📌</div><div class="ft-title">Accidental keyframes</div><div class="ft-text">Deselect the keyframe before changing a property globally.</div></div>
-    <div class="feat"><div class="ft-icon">📱</div><div class="ft-title">Phone-screen only</div><div class="ft-text">Always check on a laptop. Colors look very different on bigger screens.</div></div>
-  </div>
-</section>
-
-<footer>
-  <div class="curated-by">
-    <span class="curated-line"></span>
-    <span class="curated-text">Notes &amp; clips curated carefully by</span>
-    <span class="curated-line"></span>
-  </div>
-  <div class="mentor-card">
-    <div class="mentor-photo-wrap">
+    <div class="mentor-card">
       <img src="images/shaid-photo.jpeg" alt="Muhibbuddin Shaid Hakkeem" class="mentor-photo">
-    </div>
-    <div class="mentor-info">
-      <div class="mentor-label">Mentor</div>
-      <div class="mentor-name">Muhibbuddin Shaid Hakkeem</div>
-      <div class="mentor-bio">APJ Academy · Video Editing Class</div>
-      <div class="mentor-social">
-        <a href="https://www.shaid360.com" target="_blank" rel="noopener" class="social-link">
-          <span class="social-icon">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="12" cy="12" r="10"></circle>
-              <line x1="2" y1="12" x2="22" y2="12"></line>
-              <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
-            </svg>
-          </span>
-          <span class="social-text"><span class="social-handle">shaid360.com</span><span class="social-platform">Website</span></span>
-        </a>
-        <a href="https://www.linkedin.com/in/shaid360" target="_blank" rel="noopener" class="social-link social-linkedin">
-          <span class="social-icon">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="#0A66C2" aria-hidden="true">
-              <path d="M20.45 20.45h-3.55v-5.57c0-1.33-.02-3.04-1.85-3.04-1.85 0-2.13 1.45-2.13 2.94v5.67H9.36V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.46v6.28zM5.34 7.43a2.06 2.06 0 1 1 0-4.12 2.06 2.06 0 0 1 0 4.12zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0z"/>
-            </svg>
-          </span>
-          <span class="social-text"><span class="social-handle">/in/shaid360</span><span class="social-platform">LinkedIn</span></span>
-        </a>
-        <a href="https://www.instagram.com/ai360_with_shaid" target="_blank" rel="noopener" class="social-link social-instagram">
-          <span class="social-icon">
-            <svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true">
-              <defs>
-                <linearGradient id="igGrad" x1="0%" y1="100%" x2="100%" y2="0%">
-                  <stop offset="0%" stop-color="#FFDC80"/>
-                  <stop offset="20%" stop-color="#F77737"/>
-                  <stop offset="50%" stop-color="#F56040"/>
-                  <stop offset="75%" stop-color="#C13584"/>
-                  <stop offset="100%" stop-color="#833AB4"/>
-                </linearGradient>
-              </defs>
-              <rect x="2" y="2" width="20" height="20" rx="5" ry="5" fill="url(#igGrad)"/>
-              <circle cx="12" cy="12" r="4" fill="none" stroke="#fff" stroke-width="2"/>
-              <circle cx="17.5" cy="6.5" r="1.2" fill="#fff"/>
-            </svg>
-          </span>
-          <span class="social-text"><span class="social-handle">@ai360_with_shaid</span><span class="social-platform">Instagram</span></span>
-        </a>
-        <a href="https://youtube.com/@ai360_with_shaid" target="_blank" rel="noopener" class="social-link social-youtube">
-          <span class="social-icon">
-            <svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true">
-              <path d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2C0 8.1 0 12 0 12s0 3.9.5 5.8a3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1c.5-1.9.5-5.8.5-5.8s0-3.9-.5-5.8z" fill="#FF0000"/>
-              <polygon points="9.6,15.6 16,12 9.6,8.4" fill="#fff"/>
-            </svg>
-          </span>
-          <span class="social-text"><span class="social-handle">@ai360_with_shaid</span><span class="social-platform">YouTube</span></span>
-        </a>
+      <div class="mentor-info">
+        <div class="mentor-label">Mentor</div>
+        <div class="mentor-name">Muhibbuddin Shaid Hakkeem</div>
+        <div class="mentor-bio">APJ Academy &middot; Video Editing Class</div>
       </div>
     </div>
-  </div>
-  <div class="footer-meta">
-    <p>APJ NextGen AI Video Editing Class · Updated May 2026</p>
-    <p>All screenshots reproduced for personal learning reference of APJ NextGen AI class students.</p>
-  </div>
-</footer>
 
+  </div>
 </main>
-</div>
 
-<script>
-// Active link highlighting on scroll
-const sections = document.querySelectorAll('section.part');
-const navLinks = document.querySelectorAll('.sidebar nav a');
-function updateActive() {
-  let current = '';
-  const scrollY = window.scrollY + 120;
-  sections.forEach(s => {
-    if (s.offsetTop <= scrollY) current = s.id;
-  });
-  navLinks.forEach(l => {
-    l.classList.toggle('active', l.getAttribute('href') === '#' + current);
-  });
-}
-window.addEventListener('scroll', updateActive);
-updateActive();
-</script>
-
-
-<script>
-const tog = document.getElementById('sidebarToggle');
-const backdrop = document.getElementById('sidebarBackdrop');
-const body = document.body;
-const closeSidebar = () => body.classList.remove('sidebar-open');
-tog.addEventListener('click', () => body.classList.toggle('sidebar-open'));
-backdrop.addEventListener('click', closeSidebar);
-// Close sidebar after picking a link
-document.querySelectorAll('.sidebar nav a').forEach(a => {
-  a.addEventListener('click', closeSidebar);
-});
-// ESC closes sidebar too
-document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeSidebar(); });
-
-// Scroll-to-top button
-const scrollTopBtn = document.getElementById('scrollTop');
-function toggleScrollBtn() {
-  if (window.scrollY > 400) scrollTopBtn.classList.add('show');
-  else scrollTopBtn.classList.remove('show');
-}
-window.addEventListener('scroll', toggleScrollBtn, { passive: true });
-scrollTopBtn.addEventListener('click', () => {
-  window.scrollTo({ top: 0, behavior: 'smooth' });
-});
-toggleScrollBtn();
-</script>
+<footer class="site-footer">
+  <p>APJ Academy &middot; Video Editing Class &middot; Updated May 2026</p>
+</footer>
 
 </body>
 </html>
