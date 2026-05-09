@@ -200,7 +200,7 @@ h1 .gradient {
 
     <p class="lead">Step-by-step companion guide with screenshots — everything we covered in class on Proton VPN, CapCut, Wondershare, transitions, and exporting. Quick check-in below to access.</p>
 
-    <a href="https://tally.so/r/ODdzQk?Class=Video%20Editing" class="cta-btn">
+    <a id="get-access" href="https://tally.so/r/ODdzQk?Class=Video%20Editing" class="cta-btn">
       Get Access
       <span class="arrow">&rarr;</span>
     </a>
@@ -236,6 +236,22 @@ h1 .gradient {
 <footer class="site-footer">
   <p>APJ Academy &middot; Video Editing Class &middot; Updated May 2026</p>
 </footer>
+
+<script>
+// Generate a unique session id on each page load and bake it into the Tally URL.
+// This becomes the per-student access key that flows back to /guide/?key=<sid>.
+(function() {
+  var sid = (window.crypto && crypto.randomUUID)
+    ? crypto.randomUUID()
+    : (Math.random().toString(36).slice(2, 12) + Date.now().toString(36));
+  var btn = document.getElementById('get-access');
+  if (btn) {
+    var u = new URL(btn.href);
+    u.searchParams.set('sid', sid);
+    btn.href = u.toString();
+  }
+})();
+</script>
 
 </body>
 </html>

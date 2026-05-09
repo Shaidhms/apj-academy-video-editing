@@ -4,6 +4,54 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <title>APJ NextGen AI Video Editing Class</title>
+
+<!-- ============== SOFT GATE — keep this script first in <head> ============== -->
+<style id="apj-gate-style">html { opacity: 0; transition: opacity 0.15s; }</style>
+<script>
+(function() {
+  var STORAGE_KEY = 'apj_unlocked_v1';
+  var TTL_MS = 30 * 24 * 60 * 60 * 1000; // 30 days
+  var GATEWAY_URL = '../';
+
+  function unlock() {
+    document.documentElement.style.opacity = '1';
+    var s = document.getElementById('apj-gate-style');
+    if (s) s.remove();
+  }
+
+  // 1. URL key — first-time visitor coming back from Tally
+  try {
+    var params = new URLSearchParams(window.location.search);
+    var urlKey = params.get('key');
+    if (urlKey && urlKey.length >= 8 && /^[A-Za-z0-9_-]+$/.test(urlKey)) {
+      localStorage.setItem(STORAGE_KEY, JSON.stringify({ key: urlKey, ts: Date.now() }));
+      // Strip the key from the URL so it doesn't sit in history / share-able links
+      params.delete('key');
+      var clean = window.location.pathname + (params.toString() ? '?' + params.toString() : '') + window.location.hash;
+      history.replaceState(null, '', clean);
+      unlock();
+      return;
+    }
+  } catch (e) {}
+
+  // 2. Returning visitor — check stored flag
+  try {
+    var raw = localStorage.getItem(STORAGE_KEY);
+    if (raw) {
+      var stored = JSON.parse(raw);
+      if (stored && stored.key && (Date.now() - stored.ts) < TTL_MS) {
+        unlock();
+        return;
+      }
+      localStorage.removeItem(STORAGE_KEY);
+    }
+  } catch (e) {}
+
+  // 3. No valid key, no valid stored flag — bounce to gateway
+  window.location.replace(GATEWAY_URL);
+})();
+</script>
+<!-- ============== END SOFT GATE ============== -->
 <link rel="icon" type="image/png" href="../images/apj-logo.png">
 <link rel="apple-touch-icon" href="../images/apj-logo.png">
 <meta name="description" content="APJ Academy Video Editing Guide — interactive, step-by-step VPN, CapCut, and Clipchamp class companion for APJ NextGen AI students.">
